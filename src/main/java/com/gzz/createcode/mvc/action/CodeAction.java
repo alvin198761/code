@@ -61,7 +61,7 @@ public class CodeAction {
 	 * @功能描述: 生成代码
 	 */
 	@PostMapping("/create")
-	public void create(@RequestBody CodeCond cond) {
+	public void create(@RequestBody CodeCond cond) throws Exception {
 		Utils.delDir(new File(Utils.path() + "com/dl/"));
 		cond.setDb_user(CodeDao.DBUSER);
 		Utils.setTime();
