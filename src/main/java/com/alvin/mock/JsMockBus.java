@@ -1,0 +1,355 @@
+package com.alvin.mock;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.alvin.mock.bean.JSMockApiConfig;
+import com.alvin.mock.bean.SwgClientMethodBean;
+import com.alvin.mock.service.HttpClientService;
+import com.alvin.mock.utils.ZipUtils;
+import com.google.common.base.CaseFormat;
+import com.google.common.collect.Lists;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+@Service
+public class JsMockBus {
+
+	@Autowired
+	private HttpClientService httpClientService;
+//    @Autowired
+//    private JsoupService jsoupService;
+//    @Autowired
+//    private MockGenService mockGenService;
+
+	public List<JSONObject> queryList(JSMockApiConfig config) {
+		String html = httpClientService.get(config.getUrl());
+		JSONObject jsonObject = JSONObject.parseObject(html);
+		return jsonObject.getJSONArray("tags").stream().map(item -> (JSONObject) item).collect(Collectors.toList());
+	}
+
+
+	public String genCode(JSMockApiConfig config) throws IOException {
+		String html = httpClientService.get(config.getUrl());
+		html = html.replaceAll("[$]ref", "_ref");
+		JSONObject jsonObject = JSONObject.parseObject(html);
+		String dir = "mock_gen_dir";
+		new File(dir).mkdirs();
+		config.getTags().stream().forEach(item -> {
+			String actionName = item.getString("name");
+			try {
+				genMock(dir, actionName, jsonObject);
+//				genApi(dir, actionName, jsonObject.getJSONObject("paths"));
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.out.println(actionName + " mock error" + e.getMessage());
+			}
+		});
+		String file = "app_center_api_mock.zip";
+		ZipUtils.doCompress(dir, file);
+		System.gc();
+		File dirFile = new File(dir);
+		//只有两层
+		for (File f : dirFile.listFiles()) {
+			for (File subF : f.listFiles()) {
+				subF.delete();
+			}
+			f.delete();
+		}
+		dirFile.delete();
+		return file;
+	}
+
+	private List<SwgClientMethodBean> parseMethod(String actionName, JSONObject jsonObject) {
+		List<SwgClientMethodBean> list = Lists.newArrayList();
+		for (Map.Entry<String, Object> pathEntry : jsonObject.entrySet()) {
+			if (pathEntry.getKey().equals("/")) {
+				continue;
+			}
+			JSONObject pathJson = (JSONObject) pathEntry.getValue();
+			for (String mk : pathJson.keySet()) {
+				JSONObject method = pathJson.getJSONObject(mk);
+				if (!method.getJSONArray("tags").contains(actionName)) {
+					continue;
+				}
+				String url = pathEntry.getKey();
+				String methodName = url.substring(url.lastIndexOf("/") + 1);
+				if (url.contains("{")) {
+					int index = url.indexOf("{");
+					methodName = url.substring(0, index - 1);
+					methodName = methodName.substring(methodName.lastIndexOf("/") + 1);
+				}
+				//地址栏参数 body参数
+				SwgClientMethodBean wm = new SwgClientMethodBean();
+				wm.setComment(method.getString("description"));
+				if (method.containsKey("parameters")) {
+					JSONArray jsonArray = method.getJSONArray("parameters");
+					for (int j = 0; j < jsonArray.size(); j++) {
+						JSONObject pJson = jsonArray.getJSONObject(j);
+						if (pJson.getString("in").equals("path")) {
+							wm.setData(null);
+							String name = pJson.getString("name");
+							url = url.replace("{" + name + "}", "'+payload." + name + "+'");
+						} else if (pJson.getString("in").equals("body")) {
+							wm.setContentType("application/json");
+							wm.setData("JSON.stringify(payload)");
+						} else {
+							wm.setData("{...payload}");
+						}
+					}
+				}
+				wm.setUrl(url);
+				wm.setMethod(mk);
+				wm.setName(methodName);
+				if (method.containsKey("parameters")) {
+					JSONArray jsonArray = method.getJSONArray("parameters");
+					String in = jsonArray.getJSONObject(0).getString("in");
+					String name = jsonArray.getJSONObject(0).getString("name");
+					wm.setHasToken(in.equals("header") && name.equals("Authorization"));
+				}
+				list.add(wm);
+			}
+		}
+		return list;
+	}
+
+//    private void genApi(String dir, String actionName, JSONObject jsonObject) throws IOException {
+//        String fileName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, actionName.replace('-', '_'));
+//        Path path = Paths.get(dir, "api", fileName + "Service.js");
+//        path.getParent().toFile().mkdirs();
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("import reqwest from '../utils/reqwest';").append(System.lineSeparator());
+//        sb.append("import {getGlobalToken} from '../utils/constant';").append(System.lineSeparator());
+//        for (Map.Entry<String, Object> pathEntry : jsonObject.entrySet()) {
+//            if (pathEntry.getKey().equals("/")) {
+//                continue;
+//            }
+//            JSONObject pathJson = (JSONObject) pathEntry.getValue();
+//            for (String mk : pathJson.keySet()) {
+//                JSONObject method = pathJson.getJSONObject(mk);
+//                if (!method.getJSONArray("tags").contains(actionName)) {
+//                    continue;
+//                }
+//                String url = pathEntry.getKey();
+//                String methodName = url.substring(url.lastIndexOf("/") + 1);
+//                String data = "     data: {...payload}\n";
+//                if (url.contains("{")) {
+//                    int index = url.indexOf("{");
+//                    methodName = url.substring(0, index - 1);
+//                    methodName = methodName.substring(methodName.lastIndexOf("/") + 1);
+//                }
+//                //地址栏参数 body参数
+//                if (method.containsKey("parameters")) {
+//                    JSONArray jsonArray = method.getJSONArray("parameters");
+//                    for (int j = 0; j < jsonArray.size(); j++) {
+//                        JSONObject pJson = jsonArray.getJSONObject(j);
+//                        if (pJson.getString("in").equals("path")) {
+//                            data = "";
+//                            String name = pJson.getString("name");
+//                            url = url.replace("{" + name + "}", "'+payload." + name + "+'");
+//                        }
+//                        if (pJson.getString("in").equals("body")) {
+//                            data = "     contentType: 'application/json',\n     data: JSON.stringify(payload)";
+//                        }
+//                    }
+//                }
+//                sb.append("// ").append(method.getString("description")).append(System.lineSeparator());
+//                String regex =
+//                        "export function " + methodName + "(payload) {\n" +
+//                                "   return reqwest({\n" +
+//                                "     url: '" + url + "',\n" +
+//                                "     method: '" + mk + "',\n";
+//                sb.append(regex);
+//                if (method.containsKey("parameters")) {
+//                    JSONArray jsonArray = method.getJSONArray("parameters");
+//                    String in = jsonArray.getJSONObject(0).getString("in");
+//                    String name = jsonArray.getJSONObject(0).getString("name");
+//                    if (in.equals("header") && name.equals("Authorization")) {
+//                        sb.append("     headers: {'Authorization': getGlobalToken()},\n");
+//                    }
+//                }
+//                regex = "     type: 'json',\n" + data +
+//                        "  })\n" +
+//                        " }";
+//                sb.append(regex).append(System.lineSeparator());
+//            }
+//        }
+//        Files.write(path, sb.toString().getBytes("utf-8"));
+//    }
+
+	private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+	private void genMock(String dir, String actionName, JSONObject root) throws IOException {
+		String fileName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, actionName.replace('-', '_'));
+		System.out.println(actionName);
+//        if (actionName.equals("dyn-msg-action")) {
+//            System.out.println("dyn-msg-action");
+//            return;
+//        }
+		Path path = Paths.get(dir, "mock", fileName + "Mock.js");
+		path.getParent().toFile().mkdirs();
+		StringBuilder sb = new StringBuilder();
+		sb.append("/*" + actionName + ",:author:tangzhichao.,DATE:" + format.format(new Date()) + "*/").append(System.lineSeparator());
+		sb.append(" 'use strict';").append(System.lineSeparator());
+		sb.append(" var Mock = require('mockjs')").append(System.lineSeparator());
+		sb.append(" var Random = Mock.Random;").append(System.lineSeparator());
+		sb.append(" module.exports = {").append(System.lineSeparator());
+		JSONObject jsonObject = root.getJSONObject("paths");
+		JSONObject definitionsObj = root.getJSONObject("definitions");
+		for (Map.Entry<String, Object> pathEntry : jsonObject.entrySet()) {
+			if (pathEntry.getKey().equals("/")) {
+				continue;
+			}
+			JSONObject pathJson = (JSONObject) pathEntry.getValue();
+			for (String mk : pathJson.keySet()) {
+				JSONObject method = pathJson.getJSONObject(mk);
+				if (!method.getJSONArray("tags").contains(actionName)) {
+					continue;
+				}
+				String url = pathEntry.getKey();
+				System.out.println(url);
+				String responseRef = method.getJSONObject("responses").getJSONObject("200").getJSONObject("schema").getString("_ref");
+				//空数据
+				String text = "'" + mk.toUpperCase() + " " + url + "': function (req, res, next) {\n" +
+						"    var data = Mock.mock({\n" +
+						"      \"code\": '0',\n" +
+						"      \"data\": " + genMockByRef(responseRef, definitionsObj) + "\n" +
+						"      \"errorMsg\": '',\n" +
+						"      \"success\": '',\n" +
+						"    });\n" +
+						"    setTimeout(function () {\n" +
+						"      res.json(data);\n" +
+						"    }, 500);\n" +
+						"  },";
+
+				sb.append(text).append(System.lineSeparator());
+			}
+		}
+		sb.append(" }").append(System.lineSeparator());
+		Files.write(path, sb.toString().getBytes("utf-8"));
+	}
+
+	/**
+	 * @param responseRef
+	 * @return
+	 */
+	private String genMockByRef(String responseRef, JSONObject definitionsObj) {
+		if (responseRef == null) {
+			return "'@integer(1,100)',";
+		}
+		responseRef = responseRef.substring("#/definitions/".length());
+		JSONObject targetRef = definitionsObj.getJSONObject(responseRef);
+		JSONObject dataObj = targetRef.getJSONObject("properties").getJSONObject("data");
+		if (dataObj == null) {
+			JSONObject properties = targetRef.getJSONObject("properties");
+			StringBuilder sb = new StringBuilder(); //这段代码可以复用
+			sb.append("{");
+			for (Map.Entry<String, Object> entry : properties.entrySet()) {
+				JSONObject fieldObj = (JSONObject) entry.getValue();
+				String type = fieldObj.getString("type");
+				sb.append("'" + entry.getKey() + "':").append(createBaseClassMockByType(type, definitionsObj, fieldObj)).append(System.lineSeparator());
+			}
+			sb.append("},");
+			return sb.toString();
+		}
+		String type = dataObj.getString("type");
+		if (type == null) {
+			String ref = targetRef.getJSONObject("properties").getJSONObject("data").getString("_ref");
+			return createObjectRef(ref, definitionsObj);
+		}
+		return createBaseClassMockByType(type, definitionsObj, dataObj);
+	}
+
+	private String createBaseClassMockByType(String type, JSONObject definitionsObj, JSONObject dataObj) {
+		if (type == null) {
+			String ref = dataObj.getString("_ref");
+			if (ref == null) {
+				return "{},";
+			}
+			return createObjectRef(ref, definitionsObj);
+		}
+		if (type.equals("number")) {
+			return "'@integer(1,100)',";
+		}
+		if (type.equals("integer")) {
+			return "'@integer(1,100)',";
+		}
+		if (type.equals("string")) {
+			if (dataObj.containsKey("format")) {
+				String format = dataObj.getString("format");
+				if (format.equals("date-time")) {
+					return "new Date(),";
+				}
+			}
+			return "'@word(1,100)',";
+		}
+		if (type.equals("boolean")) {
+			return "'@word(1,100)',";
+		}
+		if (type.equals("array")) {
+			String ref = dataObj.getJSONObject("items").getString("_ref");
+			String itemType = dataObj.getJSONObject("items").getString("type");
+			if (ref != null) {
+				StringBuilder sb = new StringBuilder();
+				sb.append(System.lineSeparator()).append(createObjectRef(ref, definitionsObj)).append(System.lineSeparator());
+				return "[" + sb.toString() + "],";
+			} else {
+				return mockArrayByItemType(itemType);
+			}
+		}
+		return "{},";
+	}
+
+	private String mockArrayByItemType(String type) {
+		if (type.equals("number")) {
+			return "[1,2,3],";
+		}
+		if (type.equals("integer")) {
+			return "[1,2,3],";
+		}
+		if (type.equals("string")) {
+			return "['test string'],";
+		}
+		if (type.equals("boolean")) {
+			return "[true],";
+		}
+		if (type.equals("object")) {
+			return "[{}],";
+		}
+		return "[],";
+	}
+
+	private String createObjectRef(String targetRef, JSONObject definitionsObj) {
+		targetRef = targetRef.substring("#/definitions/".length());
+		if ("File".equals(targetRef)) {
+			return "{},";
+		}
+		if ("Department".equals(targetRef)) {
+			return "{}";
+		}
+		JSONObject targetJsonObject = definitionsObj.getJSONObject(targetRef);
+		JSONObject propertiesObj = targetJsonObject.getJSONObject("properties");
+		if (propertiesObj == null) {
+			return "{}";
+		}
+		StringBuilder sb = new StringBuilder();
+		sb.append("{");
+		for (Map.Entry<String, Object> entry : propertiesObj.entrySet()) {
+			JSONObject fieldObj = (JSONObject) entry.getValue();
+			String type = fieldObj.getString("type");
+			sb.append("'" + entry.getKey() + "':").append(createBaseClassMockByType(type, definitionsObj, fieldObj)).append(System.lineSeparator());
+		}
+		sb.append("},");
+		return sb.toString();
+	}
+}
