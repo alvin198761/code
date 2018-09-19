@@ -1,6 +1,6 @@
 package com.alvin.mock.service;
 
-import com.dl.devops.datatools.system.appcenter.mock.bean.JSMock;
+import com.alvin.mock.bean.JSMock;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
