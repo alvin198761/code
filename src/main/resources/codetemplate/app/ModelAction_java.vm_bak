@@ -44,17 +44,8 @@ public class ${clsUpp}Action extends PrincipalAction {
      * @方法说明：  新增[${cName}]记录
      */
     @ApiOperation(value = "新增[${cName}]", notes = "返回影响记录行数")
-    @ApiImplicitParams(
-    {
-        #foreach($fi in $fList)
-            @ApiImplicitParam(name = "${fi.name}", value = "${fi.comment}", paramType = "query", dataType="${fi.type}", required = true),
-        #end
-        @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header")
-    })
-    @ApiResponses({
-        @ApiResponse(code = 0, message = "操作成功")
-    })
-
+    @ApiImplicitParams({ @ApiImplicitParam(name = "${lowUpp}", value = "[${cName}]对象", required = true, dataType = "${clsUpp}"),
+    @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header") })
     @PostMapping("save")
 	public SwaggerRespImpl<Integer> save(@RequestBody ${clsUpp} ${lowUpp}, Principal principal) {
     		return new SwaggerRespImpl<>(bus.save(${lowUpp}));
@@ -65,6 +56,8 @@ public class ${clsUpp}Action extends PrincipalAction {
     * @方法说明： 删除[${cName}]记录
     */
     @ApiOperation(value = "删除[${cName}]", notes = "返回影响记录行数")
+    @ApiImplicitParams({ @ApiImplicitParam(name = "id", value = "[${cName}]主键", required = true, dataType = "${idType}", paramType = "query"),
+    @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header") })
     @PostMapping( "delete" )
     public SwaggerRespImpl<Integer> delete(@RequestParam("id") ${idType} id) {
             return new SwaggerRespImpl<>(bus.delete(new ${idType}[] { id }));
@@ -74,29 +67,19 @@ public class ${clsUpp}Action extends PrincipalAction {
     * @方法说明： 修改[${cName}]记录
     */
     @ApiOperation(value = "修改[${cName}]", notes = "返回影响记录行数")
-    @ApiImplicitParams(
-    {
-        #foreach($fi in $fList)
-            @ApiImplicitParam(name = "${fi.name}", value = "${fi.comment}", paramType = "query", dataType="${fi.type}", required = true),
-        #end
-        @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header")
-    })
+    @ApiImplicitParams({ @ApiImplicitParam(name = "${lowUpp}", value = "[${cName}]对象", required = true, dataType = "${clsUpp}"),
+    @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header") })
     @PostMapping("update")
     public SwaggerRespImpl<Integer> update(@RequestBody ${clsUpp} ${lowUpp}, Principal principal) {
-        return new SwaggerRespImpl<>(bus.update(${lowUpp}));
-    }
+            return new SwaggerRespImpl<>(bus.update(${lowUpp}));
+        }
 
     /**
     * @方法说明： 按条件查询分页[${cName}]列表
     */
     @ApiOperation(value = "按条件查询分页[${cName}]列表", notes = "返回分页[${cName}]列表")
-    @ApiImplicitParams(
-    {
-        #foreach($fi in $fList)
-            @ApiImplicitParam(name = "${fi.name}", value = "${fi.comment}", paramType = "query", dataType="${fi.type}", required = true),
-        #end
-        @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header")
-    })
+    @ApiImplicitParams({ @ApiImplicitParam(name = "cond", value = "[${cName}]查询条件对象", required = true, dataType = "${clsUpp}Cond"),
+    @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header") })
     @PostMapping( "queryPage")
     public SwaggerRespImpl<Page<${clsUpp}>> queryPage(@RequestBody ${clsUpp}Cond cond, Principal principal) {
         // cond.setBranch_id(getSessionBranchId(principal));
@@ -107,13 +90,8 @@ public class ${clsUpp}Action extends PrincipalAction {
     * @方法说明： 按条件查询不分页[${cName}]列表
     */
     @ApiOperation(value = "按条件查询不分页[${cName}]列表", notes = "返回不分页[${cName}]列表")
-    @ApiImplicitParams(
-    {
-        #foreach($fi in $fList)
-            @ApiImplicitParam(name = "${fi.name}", value = "${fi.comment}", paramType = "query", dataType="${fi.type}", required = true),
-        #end
-        @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header")
-    })
+    @ApiImplicitParams({ @ApiImplicitParam(name = "cond", value = "[${cName}]查询条件对象", required = true, dataType = "${clsUpp}Cond"),
+    @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header") })
 	@PostMapping("queryList")
     public SwaggerRespImpl<List<${clsUpp}>> queryList(@RequestBody ${clsUpp}Cond cond, Principal principal) {
             // cond.setBranch_id(getSessionBranchId(principal));
@@ -124,13 +102,8 @@ public class ${clsUpp}Action extends PrincipalAction {
     * @方法说明： 按条件查询[${cName}]记录个数
     */
     @ApiOperation(value = "按条件查询[${cName}]记录个数", notes = "返回记录个数")
-    @ApiImplicitParams(
-    {
-        #foreach($fi in $fList)
-            @ApiImplicitParam(name = "${fi.name}", value = "${fi.comment}", paramType = "query", dataType="${fi.type}", required = true),
-        #end
-        @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header")
-    })
+    @ApiImplicitParams({ @ApiImplicitParam(name = "cond", value = "[${cName}]查询条件对象", required = true, dataType = "${clsUpp}Cond"),
+    @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header") })
 	@PostMapping( "queryCount")
 	public SwaggerRespImpl<Long> queryCount(@RequestBody ${clsUpp}Cond cond) {
 		return new SwaggerRespImpl<>(bus.queryCount(cond));
@@ -151,13 +124,8 @@ public class ${clsUpp}Action extends PrincipalAction {
     * @方法说明： 验证方法
     */
     @ApiOperation(value = "按条件验证方法[${cName}]相关相信息", notes = "返回验证结果")
-    @ApiImplicitParams(
-    {
-        #foreach($fi in $fList)
-            @ApiImplicitParam(name = "${fi.name}", value = "${fi.comment}", paramType = "query", dataType="${fi.type}", required = true),
-        #end
-        @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header")
-    })
+    @ApiImplicitParams({ @ApiImplicitParam(name = "cond", value = "[${cName}]查询条件对象", required = true, dataType = "${clsUpp}Cond"),
+    @ApiImplicitParam(name = "Authorization", value = "Token",required = true, dataType = "string", paramType = "header") })
 	@PostMapping( "validate")
     public SwaggerRespImpl<Integer> validate(@RequestBody ${clsUpp}Cond cond, Principal principal) {
                 // 此处写验证逻辑
