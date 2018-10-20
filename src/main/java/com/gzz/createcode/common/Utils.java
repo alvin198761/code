@@ -10,17 +10,19 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import com.google.common.base.Joiner;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.gzz.createcode.mvc.model.Field;
 
 /**
- * @功能描述:代码生成辅助类
  * @author gzz_gzz@163.com
+ * @功能描述:代码生成辅助类
  * @date 2018-02-15
  */
 
@@ -53,6 +55,10 @@ public class Utils {
 		StringBuilder sb = new StringBuilder();
 		list.forEach(item -> sb.append(prefix.concat(Utils.firstUpper(item.getName())).concat(suffix)));
 		return noId ? sb.delete(0, sb.indexOf(",") + 1).delete(sb.length() - 1, sb.length()) : sb.delete(sb.length() - 1, sb.length());
+	}
+
+	public static String add(List<Field> list, String prefix, String join) {
+		return Joiner.on(join).join(list.stream().map(item -> prefix.concat(item.getName())).collect(Collectors.toList()));
 	}
 
 	/**
@@ -158,7 +164,7 @@ public class Utils {
 		}
 	}
 	//////////////////////////////////////////////
-	
+
 //	public static boolean isEmptyString(final CharSequence cs) {
 //		return cs == null || cs.length() == 0;
 //	}
@@ -175,7 +181,7 @@ public class Utils {
 //		return list != null && list.size() >= 0;
 //	}
 
-//	public static void main(String[] args) {
+	//	public static void main(String[] args) {
 //		logger.info(isEmptyString(""));
 //		logger.info(isEmptyString(null));
 //		List<Integer> list = Lists.newArrayList();

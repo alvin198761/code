@@ -128,7 +128,7 @@ public class ${clsUpp}Dao extends BaseDao{
     */
     public String getSelectedItems(${clsUpp}Cond cond){
         if(cond == null || cond.getSelectedFields() == null || cond.getSelectedFields().isEmpty()){
-        return "${selectFields}"; //默认所有字段
+        return "${selectItems}"; //默认所有字段
         }
         return Joiner.on(",").join(cond.getSelectedFields());
     }

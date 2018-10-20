@@ -6,7 +6,7 @@ module.exports = {
 
   'POST /api/${lowUpp}/queryPage': function (req, res, next) {
     var data = Mock.mock({
-      content|10: [{
+      'content|10': [{
         #foreach($field in $fList)
             #if (${field.type} == "String")
                 ${field.name} : "@word(5,10)",// ${field.comment}
@@ -15,9 +15,9 @@ module.exports = {
             #end
         #end
       }],
-      number: '@integer(100,200)',
-      size: 10,
-      totalElements: 500,
+      'number': '@integer(100,200)',
+      'size': 10,
+      'totalElements': 500,
     });
     setTimeout(function () {
       res.json(data);
@@ -38,7 +38,7 @@ module.exports = {
 
   'POST /api/${lowUpp}/queryList': function (req, res, next) {
     var data = Mock.mock({
-      content|10: [{
+      'content|10': [{
         #foreach($field in $fList)
             #if (${field.type} == "String")
                 ${field.name} : "@word(5,10)",// ${field.comment}

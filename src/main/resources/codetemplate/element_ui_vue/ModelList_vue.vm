@@ -5,7 +5,7 @@
             <el-form :inline="true">
                 #foreach($field in $fList)
                     <el-form-item label="${field.comment}">
-                        <el-input placeholder="请输入${field.comment}" size="small" v-common="form.${field.name}"></el-input>
+                        <el-input placeholder="请输入${field.comment}" size="small" v-model="form.${field.name}"></el-input>
                     </el-form-item>
                 #end
                   <el-form-item>
@@ -99,7 +99,7 @@
           that.${dollar}http.delete("/api/${lowUpp}/delete", {
 		            params: {ids: [row.${idName}]}
 		          }).then(res => {
-		            this.${dollar}message.success("删除成功
+		            this.${dollar}message.success("删除成功");
 		            that.refresh();
 		          }).catch(res => {
 		            that.${dollar}message.error("删除失败：" + res);

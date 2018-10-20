@@ -24,13 +24,13 @@ import com.gzz.createcode.mvc.model.Table;
 
 
 /**
- * @功能描述:生成列表类型代码的实现类
  * @author gzz_gzz@163.com
+ * @功能描述:生成列表类型代码的实现类
  * @date 2018-02-15
  */
 @Service
 public class CodeService {
-//	 private Log logger = LogFactory.getLog(CodeService.class);// 日志类
+	//	 private Log logger = LogFactory.getLog(CodeService.class);// 日志类
 	@Autowired
 	protected CodeDao dao;
 
@@ -85,6 +85,8 @@ public class CodeService {
 			jsonObject.put("paramsFields", Utils.add(fList, "vo.get", "(),", false));
 			jsonObject.put("updateFields", Utils.add(fList, "", "=?,", true, "sql"));
 			jsonObject.put("updateParams", Utils.add(fList, "vo.get", "(),", true) + ",vo.get" + Utils.firstUpper(idName) + "()");
+			jsonObject.put("selectItems", Utils.add(fList, "t.", ","));
+
 			//其他附属数据
 			List<String> importList = Lists.newArrayList();
 			importList.add(Utils.dateImport(fList));
@@ -231,7 +233,7 @@ public class CodeService {
 	public List<Field> queryFields(CodeCond cond) {
 		return dao.queryFields(cond);
 	}
-	
+
 	public void executeSql(String sql) {
 		dao.executeSql(sql);
 	}
