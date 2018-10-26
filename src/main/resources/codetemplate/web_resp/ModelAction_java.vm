@@ -32,15 +32,15 @@ public class ${clsUpp}Action extends PrincipalAction {
     * @方法说明：  新增[${cName}]记录
     */
 	@PostMapping("save")
-	public int save(@RequestBody ${clsUpp} ${lowUpp}, Principal principal) {
-		return bus.save(${lowUpp});
+	public RestfullResp<Integer> save(@RequestBody ${clsUpp} ${lowUpp}, Principal principal) {
+		return new RestfullResp(bus.save(${lowUpp}));
 	}
     
     /**
     * @方法说明：  新增[${cName}]记录
     */
     //@PostMapping("validate")
-    //public MessageInfo validate(@RequestBody ${clsUpp}Cond cond, Principal principal) {
+    //public RestfullResp<MessageInfo> validate(@RequestBody ${clsUpp}Cond cond, Principal principal) {
     //MessageInfo mi = new MessageInfo();
     ////此处写验证逻辑
     ////cond.setfield(...)
@@ -48,56 +48,56 @@ public class ${clsUpp}Action extends PrincipalAction {
     ////if(count = 0){
     ////mi.setMessage(1, "记录个数不能为0!\
     ////}
-    //return mi;
+    //return new RestfullResp(mi);
     //}
 
     /**
     * @方法说明： 删除${cName}记录(多条)
     */
 	@DeleteMapping("delete")
-	public int delete(@RequestParam("ids[]") ${idType} ids[]) {
-		return bus.delete(ids);
+	public RestfullResp<Integer> delete(@RequestParam("ids[]") ${idType} ids[]) {
+		return new RestfullResp(bus.delete(ids));
 	}
 
     /**
     * @方法说明： 修改${cName}记录
     */
 	@PostMapping("update")
-	public int update(@RequestBody ${clsUpp} ${lowUpp}, Principal principal) {
-		return bus.update(${lowUpp});
+	public RestfullResp<Integer> update(@RequestBody ${clsUpp} ${lowUpp}, Principal principal) {
+		return new RestfullResp(bus.update(${lowUpp}));
 	}
 
     /**
     * @方法说明： 按条件查询分页${cName}列表
     */
 	@PostMapping("queryPage")
-	public Page<${clsUpp}> queryPage(@RequestBody ${clsUpp}Cond cond, Principal principal){
+	public RestfullResp< Page<${clsUpp}>> queryPage(@RequestBody ${clsUpp}Cond cond, Principal principal){
 		//cond.setBranch_id(getDefaultBranchId(principal));
-		return bus.queryPage(cond);
+		return new RestfullResp(bus.queryPage(cond));
 	}
 
     /**
     * @方法说明： 按条件查询不分页${cName}列表
     */
     @PostMapping("queryList")
-    public List<${clsUpp}> queryList(@RequestBody ${clsUpp}Cond cond, Principal principal){
+    public RestfullResp<List<${clsUpp}>> queryList(@RequestBody ${clsUpp}Cond cond, Principal principal){
         //cond.setBranch_id(getDefaultBranchId(principal));
-        return bus.queryList(cond);
+        return new RestfullResp(bus.queryList(cond));
     }
 
     /**
     * @方法说明： 按主键查找单个${cName}记录
     */
 	@GetMapping("findById")
-	public ${clsUpp} findById(@RequestParam("id") ${idType} id) {
-		return bus.findById(id);
+	public RestfullResp<${clsUpp}> findById(@RequestParam("id") ${idType} id) {
+		return new RestfullResp (bus.findById(id));
 	}
 
     /**
     * @方法说明： 按条件查询${cName}记录个数
     */
 	@PostMapping("queryCount")
-	public long queryCount(@RequestBody ${clsUpp}Cond cond){
-		return bus.queryCount(cond);
+	public RestfullResp<Long> queryCount(@RequestBody ${clsUpp}Cond cond){
+		return new RestfullResp(bus.queryCount(cond));
 	}
 }
