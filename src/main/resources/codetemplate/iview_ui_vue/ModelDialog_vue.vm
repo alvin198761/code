@@ -1,7 +1,7 @@
 /*${cName}新增与修改},作者:${auth},日期:${time}*/
 <template>
       <Modal :title="title" v-model="show" :scrollable="false" :mask-closable="false" width="600">
-            <Form :common="form" ref="form" :rules="rules" :label-width="100">
+            <Form :model="form" ref="form" :rules="rules" :label-width="100">
                   <Row>
                         <i-col>
                             #foreach($field in $fList)
@@ -30,7 +30,7 @@ import {Message, Modal} from 'iview';
         #foreach($field in $fList)
             ${field.name} : [
             {required: true, message: '请输入${field.comment}', trigger: 'blur'},
-            {min: 1, max: 10, message: '${field.comment}长度不正确}', trigger: 'blur'},
+            {min: 1, max: 10, message: '${field.comment}长度不正确', trigger: 'blur'},
         ],
         #end
         }
