@@ -77,7 +77,9 @@ public class ${clsUpp}Dao extends BaseDao{
     public Page<${clsUpp}> queryPage(${clsUpp}Cond cond) {
         StringBuilder sb = new StringBuilder("SELECT ");
         sb.append(this.getSelectedItems(cond));
-        sb.append(" FROM ${tName} t WHERE 1=1");
+        sb.append(" FROM ${tName} t ");
+        sb.append(getJoinTables());
+        sb.append(" WHERE 1=1 ");
         sb.append(cond.getCondition());
         //sb.append(cond.getOrderSql());//增加排序子句;
         //logger.info(SqlUtil.showSql(sb.toString(),cond.getArray()));//显示SQL语句
@@ -90,7 +92,9 @@ public class ${clsUpp}Dao extends BaseDao{
     public List<${clsUpp}> queryList(${clsUpp}Cond cond) {
         StringBuilder sb = new StringBuilder("SELECT ");
         sb.append(this.getSelectedItems(cond));
-        sb.append(" FROM ${tName} t WHERE 1=1");
+        sb.append(" FROM ${tName} t ");
+        sb.append(getJoinTables());
+        sb.append(" WHERE 1=1 ");
     	sb.append(cond.getCondition());
     	//sb.append(" ORDER BY operate_time DESC");
     	return jdbcTemplate.query(sb.toString(), cond.getArray(), new BeanPropertyRowMapper<>(${clsUpp}.class));
@@ -102,7 +106,9 @@ public class ${clsUpp}Dao extends BaseDao{
     public ${clsUpp} findById(${idType} id) {
         StringBuilder sb = new StringBuilder("SELECT ");
         sb.append(this.getSelectedItems(null));
-        sb.append(" FROM ${tName} t WHERE 1=1");
+        sb.append(" FROM ${tName} t ");
+        sb.append(getJoinTables());
+        sb.append(" WHERE 1=1 ");
     	sb.append(" AND t.${idName}=?");
     	return jdbcTemplate.queryForObject(sb.toString(), new Object[]{id}, new BeanPropertyRowMapper<>(${clsUpp}.class));
     }
@@ -131,5 +137,13 @@ public class ${clsUpp}Dao extends BaseDao{
         return "${selectItems}"; //默认所有字段
         }
         return Joiner.on(",").join(cond.getSelectedFields());
+    }
+
+    /**
+    * @方法说明：表连接代码
+    * @return
+    */
+    public String getJoinTables(){
+        return "";
     }
 }

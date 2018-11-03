@@ -34,7 +34,7 @@ public class ${clsUpp}Controller {
     /**
     * @方法说明： 删除${cName}记录(多条)
     */
-	@PostMapping("delete")
+	@RequestMapping("delete")
 	public int delete(@RequestParam("ids[]") ${idType} ids[]) {
 		return service.delete(ids);
 	}
@@ -66,7 +66,7 @@ public class ${clsUpp}Controller {
     /**
     * @方法说明： 按主键查单个${cName}记录
     */
-	@PostMapping("findById")
+	@RequestMapping("findById")
 	public ${clsUpp} findById(@RequestParam("id") ${idType} id) {
 		return service.findById(id);
 	}

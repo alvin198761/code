@@ -20,6 +20,7 @@
     </template>
 <script>
   export default {
+    components: {},
     props: ["refresh"],
     data() {
       return {
@@ -72,8 +73,8 @@
         this.form = {...row};
         this.show = true;
       },
-    },
-    components: {}
+    }
+
   }
 </script>
 <style></style>

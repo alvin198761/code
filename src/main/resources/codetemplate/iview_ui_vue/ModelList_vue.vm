@@ -29,6 +29,7 @@ import ${clsUpp}Expand from './${clsUpp}Expand.vue';
 
 
   export default {
+    components: {${clsUpp}Dialog,${clsUpp}Expand },
     data: function () {
       const that = this;
       return {
@@ -114,7 +115,7 @@ import ${clsUpp}Expand from './${clsUpp}Expand.vue';
         closable:true,
         onOk: () => {
           this.${dollar}http.delete("/api/${lowUpp}/delete", {
-		            params: {ids: [row.${idName}]}
+		            params: {id: row.${idName}}
 		          }).then(res => {
 		            Message.success({ content: "删除成功" });
 		            that.refresh();
@@ -126,8 +127,7 @@ import ${clsUpp}Expand from './${clsUpp}Expand.vue';
         }
       });
       }
-    },
-    components: {${clsUpp}Dialog,${clsUpp}Expand },
+    }
   }
 </script>
 <style></style>

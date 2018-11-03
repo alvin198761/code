@@ -52,11 +52,11 @@ public class ${clsUpp}Action extends PrincipalAction {
     //}
 
     /**
-    * @方法说明： 删除${cName}记录(多条)
+    * @方法说明： 删除${cName}记录
     */
 	@DeleteMapping("delete")
-	public RestfullResp<Integer> delete(@RequestParam("ids[]") ${idType} ids[]) {
-		return new RestfullResp(bus.delete(ids));
+	public RestfullResp<Integer> delete(@RequestParam("id") ${idType} id) {
+		return new RestfullResp(bus.delete(id));
 	}
 
     /**

@@ -52,11 +52,11 @@ public class ${clsUpp}Action extends PrincipalAction {
     //}
 
     /**
-    * @方法说明： 删除${cName}记录(多条)
+    * @方法说明： 删除${cName}记录
     */
 	@DeleteMapping("delete")
-	public int delete(@RequestParam("ids[]") ${idType} ids[]) {
-		return bus.delete(ids);
+	public int delete(@RequestParam("id") ${idType} id) {
+		return bus.delete(id);
 	}
 
     /**

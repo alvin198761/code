@@ -19,6 +19,7 @@
 <script>
   import  {mapState, mapGetters, mapMutations, mapActions}  from 'vuex';
   export default {
+    components: {},
     data() {
       return {
     		rules: {
@@ -58,8 +59,7 @@
           that.${dollar}store.dispatch("${lowUpp}/save")
         });
       },
-    },
-    components: {}
+    }
   }
 </script>
 <style></style>

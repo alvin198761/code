@@ -51,7 +51,8 @@
   import ${clsUpp}Dialog from './${clsUpp}Dialog.vue';
 
   export default {
-    data: function () {
+      components: { ${clsUpp}Dialog },
+      data: function () {
       return {
         total: 0,
         page: 1,
@@ -97,7 +98,7 @@
           type: 'warning'
         }).then(() => {
           that.${dollar}http.delete("/api/${lowUpp}/delete", {
-		            params: {ids: [row.${idName}]}
+		            params: {id: row.${idName}}
 		          }).then(res => {
 		            this.${dollar}message.success("删除成功");
 		            that.refresh();
@@ -107,8 +108,7 @@
         }).catch(() => {
         });
       }
-    },
-    components: { ${clsUpp}Dialog }
+    }
   }
 </script>
 <style></style>

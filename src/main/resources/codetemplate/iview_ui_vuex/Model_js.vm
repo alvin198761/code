@@ -66,7 +66,7 @@ export default {
 		closable:true,
 		onOk: () => {
 		  http.delete("/api/${lowUpp}/delete", {
-			params: {ids: [row.${idName}]}
+			params: {id: row.${idName}}
 		  }).then(res => {
 			Message.success({
 			  content: "删除成功"
