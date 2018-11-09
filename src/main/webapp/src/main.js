@@ -2,24 +2,30 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import iView from 'iview';
-import 'iview/dist/styles/iview.css';
-import http from './utils/http';
 
-Vue.config.productionTip = false
-Vue.use(iView);
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import NProgress from 'nprogress'//页面顶部进度条
+import installFilter from './views/common/vue-filters';
+import installPlugins from './views/common/vue-plugins';
 
-const HttpPlugin = {
-    install: function (Vue, options) {
-        Vue.$http = http;
-        Vue.prototype.$http = http;
-    }
-}
+Vue.use(ElementUI);
+installFilter(Vue);
+installPlugins(Vue);
 
-Vue.use(HttpPlugin);
+Vue.config.productionTip = true;
+
+router.beforeEach((to, from, next) => {
+    NProgress.start();
+    next()
+})
+
+router.afterEach(transition => {
+    NProgress.done();
+});
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

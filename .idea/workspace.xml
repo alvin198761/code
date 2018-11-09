@@ -2,17 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4939a8-64de-4469-a95f-b6809427fa35" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/SwaggerMockMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionMethodBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelController_java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelController_java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelDao_java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelDao_java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelDialog_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelDialog_vue.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelDialog_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelDialog_vue.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelDialog_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelDialog_vue.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/Model_js.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/Model_js.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelAction_java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelAction_java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/web_resp/ModelAction_java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/web_resp/ModelAction_java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockApiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CodeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CodeAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CommonAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CommonAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/app/AppAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/app/AppCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/app/AppModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/app/AppService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/app/Request.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/center/Action.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/center/Bus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/center/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/data/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/data/Dao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/data/Serv.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/ios/IOSUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/ios/IosModelH.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/ios/IosModelM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/ios/QueryListH.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/ios/QueryListM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/ios/QueryPageH.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/model/Condition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/model/Model.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vueelement/VueDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vueelement/VueList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vueelement/VueMockJs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vueiview/VueIviewDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vueiview/VueIviewList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vuex/Dialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vuex/Expand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vuex/IndexJs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vuex/Js.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/template/vuex/Page.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/axios.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/element.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/element.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/element-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/ionicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/vue.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/apis/Apis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/utils/http.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/Code.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/Swagger.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/code/SqlCmdDialog.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vue.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,88 +74,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ModelList_vue.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm">
+      <file leaf-file-name="JsMockBus.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="100" column="46" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
+            <state relative-caret-position="194">
+              <caret line="87" column="66" lean-forward="true" selection-start-line="87" selection-start-column="66" selection-end-line="87" selection-end-column="66" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelDialog_vue.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelDialog_vue.vm">
+      <file leaf-file-name="ModelAxiosApi_js.vm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="451">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelList_vue.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm">
+      <file leaf-file-name="ActionMethodBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionMethodBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="117" column="46" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
+            <state relative-caret-position="342">
+              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelDialog_vue.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelDialog_vue.vm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelList_vue.vm" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelList_vue.vm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelListExpand_vue.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelListExpand_vue.vm">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="ModelController_java.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelController_java.vm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1444">
-              <caret line="76" column="16" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelAction_java.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelAction_java.vm">
+      <file leaf-file-name="JSMock.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMock.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="53" selection-start-line="53" selection-end-line="59" selection-end-column="5" />
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model_js.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/Model_js.vm">
+      <file leaf-file-name="JSMockAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+            <state relative-caret-position="76">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelAction_java.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web_resp/ModelAction_java.vm">
+      <file leaf-file-name="Model_java.vm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/app/Model_java.vm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="58" column="45" lean-forward="true" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+            <state relative-caret-position="266">
+              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="16" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -115,6 +136,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -128,12 +150,15 @@
       <find>删除成功</find>
       <find>selectFields</find>
       <find>common</find>
+      <find>fre</find>
+      <find>@Contr</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>F:\github_dir\code\src\main\resources\codetemplate</dir>
+      <dir>F:\github_dir\code\src\main\java</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -144,7 +169,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/config/velocity/VelocityEngineService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/model/Field.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CodeAction.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/service/JsoupService.java" />
@@ -175,6 +199,18 @@
         <option value="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/Model_js.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CommonAction.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CodeAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockApiConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/SwaggerMockMethod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionMethodBean.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java" />
       </list>
     </option>
   </component>
@@ -218,6 +254,9 @@
       <select />
     </treeState>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/src/main/webapp/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/src/main/webapp/package.json" />
@@ -236,6 +275,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,6 +315,75 @@
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="mock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="mock" type="462c0819:PsiDirectoryNode" />
+              <item name="bean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="mock" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="createcode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="createcode" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="createcode" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="createcode" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -291,7 +401,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
@@ -299,8 +409,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="element_ui_vue" type="462c0819:PsiDirectoryNode" />
+              <item name="swgclitemplate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
@@ -308,51 +417,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="iview_ui_vue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="iview_ui_vuex" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="web_resp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,18 +433,19 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\github_dir\code\src\main\resources\commonclass" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="commonclass" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\github_dir\code\src\main\resources\commonclass" />
       <recent name="F:\github_dir\code\src\main\resources\codetemplate" />
       <recent name="F:\github_dir\code\src\main\resources\codetemplate\data" />
       <recent name="F:\github_dir\code\src\main\resources\codetemplate\model" />
       <recent name="F:\github_dir\code\src\main\resources\codetemplate\app" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="commonclass" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\github_dir\code\src\main\webapp" />
+      <recent name="F:\github_dir\code\src\main\resources\commonclass" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -512,11 +583,12 @@
       <workItem from="1541213492857" duration="159000" />
       <workItem from="1541223823179" duration="66000" />
       <workItem from="1541225463248" duration="142000" />
+      <workItem from="1541750326699" duration="9674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27236000" />
+    <option name="totallyTimeSpent" value="36910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -534,26 +606,26 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.3991276" />
       <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3293348" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.27345416" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.27665246" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="6" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3293348" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="6" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="0" />
@@ -561,7 +633,7 @@
       <window_info anchor="bottom" id="Run" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info id="Image Layers" order="1" />
-      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -569,16 +641,16 @@
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3293348" />
+      <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.3293348" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="right" id="Maven Projects" order="0" visible="true" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2707889" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.27665246" />
       <window_info anchor="right" id="Database" order="2" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
@@ -596,122 +668,25 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CommonAction.java</url>
+          <line>18</line>
+          <properties />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CommonAction.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web/IModelClient_java.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1444">
-          <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/app/ModelAction_java.vm_bak">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/app/ModelCond_java.vm">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/model/ModelCond_java.vm_bak">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/app/Model_java.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/model/Model_java.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/model/ModelCond_java.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/RegexTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelBus_java.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1482">
-          <caret line="78" column="39" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/dao/CodeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/service/MockGenService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/service/CodeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/model/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/app/ModelAction_java.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web_resp/ModelBus_java.vm" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/commonclass/exception/ErrorCode.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/commonclass/exception/BusinessException.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/commonclass/exception/DefaultExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/commonclass/aop/NoRepeatSubmitAop.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/commonclass/aop/NoRepeatSubmit.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -762,13 +737,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/Index_js.vm">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelDao_java.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
@@ -816,43 +784,204 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelAction_java.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="1007">
           <caret line="53" selection-start-line="53" selection-end-line="59" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web_resp/ModelAction_java.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="58" column="45" lean-forward="true" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+        <state relative-caret-position="1102">
+          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="1900">
           <caret line="100" column="46" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="2185">
           <caret line="117" column="46" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/Model_js.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
+        <state relative-caret-position="1292">
           <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelList_vue.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+        <state relative-caret-position="507">
+          <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="69" column="47" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="760" selection-start-column="760" selection-end-column="760" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CommonAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CodeAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockApiConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/ZipUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/SwaggerMockMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/softs/JAVA_HOME/jdk/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="50" selection-start-line="50" selection-end-line="51" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelMockJsClient_js.vm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/RequestModelClient_js.vm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/SwgClientMethodBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/app/Model_java.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionMethodBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="87" column="66" lean-forward="true" selection-start-line="87" selection-start-column="66" selection-end-line="87" selection-end-column="66" />
         </state>
       </provider>
     </entry>

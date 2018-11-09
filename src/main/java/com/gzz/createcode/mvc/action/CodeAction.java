@@ -32,7 +32,7 @@ import com.gzz.createcode.mvc.service.CodeService;
  * @date 2018-02-15
  */
 @RestController
-@RequestMapping("/code")
+@RequestMapping("/api/code")
 public class CodeAction {
 	@Autowired
 	private CodeService service;// 生成器业务罗辑接口

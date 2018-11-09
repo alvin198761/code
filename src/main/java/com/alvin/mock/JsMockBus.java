@@ -2,35 +2,35 @@ package com.alvin.mock;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.alvin.mock.bean.ActionBean;
+import com.alvin.mock.bean.ActionMethodBean;
 import com.alvin.mock.bean.JSMockApiConfig;
-import com.alvin.mock.bean.SwgClientMethodBean;
 import com.alvin.mock.service.HttpClientService;
 import com.alvin.mock.utils.ZipUtils;
 import com.google.common.base.CaseFormat;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-public class JsMockBus {
+public class JsMockBus implements InitializingBean {
 
 	@Autowired
 	private HttpClientService httpClientService;
-//    @Autowired
-//    private JsoupService jsoupService;
-//    @Autowired
-//    private MockGenService mockGenService;
+
+	private Map<String, Method> methodMap = Maps.newHashMap();
 
 	public List<JSONObject> queryList(JSMockApiConfig config) {
 		String html = httpClientService.get(config.getUrl());
@@ -39,23 +39,24 @@ public class JsMockBus {
 	}
 
 
-	public String genCode(JSMockApiConfig config) throws IOException {
+	public String genCode(JSMockApiConfig config) throws Exception {
+		Method method = this.methodMap.get(config.getCtype());
+		if (method == null) {
+			throw new Exception("没实现的客户端");
+		}
 		String html = httpClientService.get(config.getUrl());
 		html = html.replaceAll("[$]ref", "_ref");
 		JSONObject jsonObject = JSONObject.parseObject(html);
 		String dir = "mock_gen_dir";
 		new File(dir).mkdirs();
+
 		config.getTags().stream().forEach(item -> {
-			String actionName = item.getString("name");
-			try {
-				genMock(dir, actionName, jsonObject);
-//				genApi(dir, actionName, jsonObject.getJSONObject("paths"));
-			} catch (IOException e) {
-				e.printStackTrace();
-				System.out.println(actionName + " mock error" + e.getMessage());
-			}
+			ActionBean actionBean = new ActionBean();
+			actionBean.setActionName(item.getString("name"));
+			actionBean.setNote(item.getString("description"));
+			createActionMethods(actionBean, jsonObject.getJSONObject("paths"));
 		});
-		String file = "app_center_api_mock.zip";
+		String file = "swagger_api_client_mock.zip";
 		ZipUtils.doCompress(dir, file);
 		System.gc();
 		File dirFile = new File(dir);
@@ -68,10 +69,53 @@ public class JsMockBus {
 		}
 		dirFile.delete();
 		return file;
+
 	}
 
-	private List<SwgClientMethodBean> parseMethod(String actionName, JSONObject jsonObject) {
-		List<SwgClientMethodBean> list = Lists.newArrayList();
+	/**
+	 * 根据tag 拼装 method
+	 *
+	 * @param actionBean
+	 * @param paths
+	 * @return
+	 */
+	private void createActionMethods(ActionBean actionBean, JSONObject paths) {
+		for (Map.Entry<String, Object> pathEntry : paths.entrySet()) {
+			if (pathEntry.getKey().equals("/")) {
+				continue;
+			}
+			JSONObject pathJson = (JSONObject) pathEntry.getValue();
+			List<ActionMethodBean> methods = Lists.newArrayList();
+			String url = pathEntry.getKey();
+			for (String mk : pathJson.keySet()) {
+				JSONObject method = pathJson.getJSONObject(mk);
+				if (!method.getJSONArray("tags").contains(actionBean.getActionName())) {
+					continue;
+				}
+				methods.add(createMethod(method,url));
+			}
+			actionBean.setMethods(methods);
+		}
+	}
+
+	/**
+	 * 构建方法
+	 * @param method
+	 * @return
+	 */
+	private ActionMethodBean createMethod(JSONObject method,String url) {
+		ActionMethodBean methodBean = new ActionMethodBean();
+		methodBean.setUrl(url);
+
+		return methodBean;
+	}
+
+
+	@SwaggerMockMethod("axios")
+	public void genApiAxios(String dir, String actionName, JSONObject jsonObject) throws IOException {
+		String fileName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, actionName.replace('-', '_'));
+		Path path = Paths.get(dir, "api", fileName + "Service.js");
+		path.getParent().toFile().mkdirs();
 		for (Map.Entry<String, Object> pathEntry : jsonObject.entrySet()) {
 			if (pathEntry.getKey().equals("/")) {
 				continue;
@@ -84,128 +128,61 @@ public class JsMockBus {
 				}
 				String url = pathEntry.getKey();
 				String methodName = url.substring(url.lastIndexOf("/") + 1);
+				String data = "     data: {...payload}\n";
 				if (url.contains("{")) {
 					int index = url.indexOf("{");
 					methodName = url.substring(0, index - 1);
 					methodName = methodName.substring(methodName.lastIndexOf("/") + 1);
 				}
 				//地址栏参数 body参数
-				SwgClientMethodBean wm = new SwgClientMethodBean();
-				wm.setComment(method.getString("description"));
-				if (method.containsKey("parameters")) {
-					JSONArray jsonArray = method.getJSONArray("parameters");
-					for (int j = 0; j < jsonArray.size(); j++) {
-						JSONObject pJson = jsonArray.getJSONObject(j);
-						if (pJson.getString("in").equals("path")) {
-							wm.setData(null);
-							String name = pJson.getString("name");
-							url = url.replace("{" + name + "}", "'+payload." + name + "+'");
-						} else if (pJson.getString("in").equals("body")) {
-							wm.setContentType("application/json");
-							wm.setData("JSON.stringify(payload)");
-						} else {
-							wm.setData("{...payload}");
-						}
-					}
-				}
-				wm.setUrl(url);
-				wm.setMethod(mk);
-				wm.setName(methodName);
-				if (method.containsKey("parameters")) {
-					JSONArray jsonArray = method.getJSONArray("parameters");
-					String in = jsonArray.getJSONObject(0).getString("in");
-					String name = jsonArray.getJSONObject(0).getString("name");
-					wm.setHasToken(in.equals("header") && name.equals("Authorization"));
-				}
-				list.add(wm);
+//				if (method.containsKey("parameters")) {
+//					JSONArray jsonArray = method.getJSONArray("parameters");
+//					for (int j = 0; j < jsonArray.size(); j++) {
+//						JSONObject pJson = jsonArray.getJSONObject(j);
+//						if (pJson.getString("in").equals("path")) {
+//							data = "";
+//							String name = pJson.getString("name");
+//							url = url.replace("{" + name + "}", "'+payload." + name + "+'");
+//						}
+//						if (pJson.getString("in").equals("body")) {
+//							data = "     contentType: 'application/json',\n     data: JSON.stringify(payload)";
+//						}
+//					}
+//				}
+//				sb.append("// ").append(method.getString("description")).append(System.lineSeparator());
+//				String regex =
+//						"export function " + methodName + "(payload) {\n" +
+//								"   return axios({\n" +
+//								"     url: '" + url + "',\n" +
+//								"     method: '" + mk + "',\n";
+//				sb.append(regex);
+//				if (method.containsKey("parameters")) {
+//					JSONArray jsonArray = method.getJSONArray("parameters");
+//					String in = jsonArray.getJSONObject(0).getString("in");
+//					String name = jsonArray.getJSONObject(0).getString("name");
+//					if (in.equals("header") && name.equals("Authorization")) {
+//						sb.append("     headers: {'Authorization': getGlobalToken()},\n");
+//					}
+//				}
+//				regex = "     type: 'json',\n" + data +
+//						"  })\n" +
+//						" }";
+//				sb.append(regex).append(System.lineSeparator());
 			}
 		}
-		return list;
+		Files.write(path, sb.toString().getBytes("utf-8"));
+
 	}
 
-//    private void genApi(String dir, String actionName, JSONObject jsonObject) throws IOException {
-//        String fileName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, actionName.replace('-', '_'));
-//        Path path = Paths.get(dir, "api", fileName + "Service.js");
-//        path.getParent().toFile().mkdirs();
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("import reqwest from '../utils/reqwest';").append(System.lineSeparator());
-//        sb.append("import {getGlobalToken} from '../utils/constant';").append(System.lineSeparator());
-//        for (Map.Entry<String, Object> pathEntry : jsonObject.entrySet()) {
-//            if (pathEntry.getKey().equals("/")) {
-//                continue;
-//            }
-//            JSONObject pathJson = (JSONObject) pathEntry.getValue();
-//            for (String mk : pathJson.keySet()) {
-//                JSONObject method = pathJson.getJSONObject(mk);
-//                if (!method.getJSONArray("tags").contains(actionName)) {
-//                    continue;
-//                }
-//                String url = pathEntry.getKey();
-//                String methodName = url.substring(url.lastIndexOf("/") + 1);
-//                String data = "     data: {...payload}\n";
-//                if (url.contains("{")) {
-//                    int index = url.indexOf("{");
-//                    methodName = url.substring(0, index - 1);
-//                    methodName = methodName.substring(methodName.lastIndexOf("/") + 1);
-//                }
-//                //地址栏参数 body参数
-//                if (method.containsKey("parameters")) {
-//                    JSONArray jsonArray = method.getJSONArray("parameters");
-//                    for (int j = 0; j < jsonArray.size(); j++) {
-//                        JSONObject pJson = jsonArray.getJSONObject(j);
-//                        if (pJson.getString("in").equals("path")) {
-//                            data = "";
-//                            String name = pJson.getString("name");
-//                            url = url.replace("{" + name + "}", "'+payload." + name + "+'");
-//                        }
-//                        if (pJson.getString("in").equals("body")) {
-//                            data = "     contentType: 'application/json',\n     data: JSON.stringify(payload)";
-//                        }
-//                    }
-//                }
-//                sb.append("// ").append(method.getString("description")).append(System.lineSeparator());
-//                String regex =
-//                        "export function " + methodName + "(payload) {\n" +
-//                                "   return reqwest({\n" +
-//                                "     url: '" + url + "',\n" +
-//                                "     method: '" + mk + "',\n";
-//                sb.append(regex);
-//                if (method.containsKey("parameters")) {
-//                    JSONArray jsonArray = method.getJSONArray("parameters");
-//                    String in = jsonArray.getJSONObject(0).getString("in");
-//                    String name = jsonArray.getJSONObject(0).getString("name");
-//                    if (in.equals("header") && name.equals("Authorization")) {
-//                        sb.append("     headers: {'Authorization': getGlobalToken()},\n");
-//                    }
-//                }
-//                regex = "     type: 'json',\n" + data +
-//                        "  })\n" +
-//                        " }";
-//                sb.append(regex).append(System.lineSeparator());
-//            }
-//        }
-//        Files.write(path, sb.toString().getBytes("utf-8"));
-//    }
 
-	private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-	private void genMock(String dir, String actionName, JSONObject root) throws IOException {
+	@SwaggerMockMethod("reqwest")
+	public void genApi(String dir, String actionName, JSONObject jsonObject) throws IOException {
 		String fileName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, actionName.replace('-', '_'));
-		System.out.println(actionName);
-//        if (actionName.equals("dyn-msg-action")) {
-//            System.out.println("dyn-msg-action");
-//            return;
-//        }
-		Path path = Paths.get(dir, "mock", fileName + "Mock.js");
+		Path path = Paths.get(dir, "api", fileName + "Service.js");
 		path.getParent().toFile().mkdirs();
 		StringBuilder sb = new StringBuilder();
-		sb.append("/*" + actionName + ",:author:tangzhichao.,DATE:" + format.format(new Date()) + "*/").append(System.lineSeparator());
-		sb.append(" 'use strict';").append(System.lineSeparator());
-		sb.append(" var Mock = require('mockjs')").append(System.lineSeparator());
-		sb.append(" var Random = Mock.Random;").append(System.lineSeparator());
-		sb.append(" module.exports = {").append(System.lineSeparator());
-		JSONObject jsonObject = root.getJSONObject("paths");
-		JSONObject definitionsObj = root.getJSONObject("definitions");
+		sb.append("import reqwest from '../utils/reqwest';").append(System.lineSeparator());
+		sb.append("import {getGlobalToken} from '../utils/constant';").append(System.lineSeparator());
 		for (Map.Entry<String, Object> pathEntry : jsonObject.entrySet()) {
 			if (pathEntry.getKey().equals("/")) {
 				continue;
@@ -217,27 +194,103 @@ public class JsMockBus {
 					continue;
 				}
 				String url = pathEntry.getKey();
-				System.out.println(url);
-				String responseRef = method.getJSONObject("responses").getJSONObject("200").getJSONObject("schema").getString("_ref");
-				//空数据
-				String text = "'" + mk.toUpperCase() + " " + url + "': function (req, res, next) {\n" +
-						"    var data = Mock.mock({\n" +
-						"      \"code\": '0',\n" +
-						"      \"data\": " + genMockByRef(responseRef, definitionsObj) + "\n" +
-						"      \"errorMsg\": '',\n" +
-						"      \"success\": '',\n" +
-						"    });\n" +
-						"    setTimeout(function () {\n" +
-						"      res.json(data);\n" +
-						"    }, 500);\n" +
-						"  },";
-
-				sb.append(text).append(System.lineSeparator());
+				String methodName = url.substring(url.lastIndexOf("/") + 1);
+				String data = "     data: {...payload}\n";
+				if (url.contains("{")) {
+					int index = url.indexOf("{");
+					methodName = url.substring(0, index - 1);
+					methodName = methodName.substring(methodName.lastIndexOf("/") + 1);
+				}
+				//地址栏参数 body参数
+				if (method.containsKey("parameters")) {
+					JSONArray jsonArray = method.getJSONArray("parameters");
+					for (int j = 0; j < jsonArray.size(); j++) {
+						JSONObject pJson = jsonArray.getJSONObject(j);
+						if (pJson.getString("in").equals("path")) {
+							data = "";
+							String name = pJson.getString("name");
+							url = url.replace("{" + name + "}", "'+payload." + name + "+'");
+						}
+						if (pJson.getString("in").equals("body")) {
+							data = "     contentType: 'application/json',\n     data: JSON.stringify(payload)";
+						}
+					}
+				}
+				sb.append("// ").append(method.getString("description")).append(System.lineSeparator());
+				String regex =
+						"export function " + methodName + "(payload) {\n" +
+								"   return reqwest({\n" +
+								"     url: '" + url + "',\n" +
+								"     method: '" + mk + "',\n";
+				sb.append(regex);
+				if (method.containsKey("parameters")) {
+					JSONArray jsonArray = method.getJSONArray("parameters");
+					String in = jsonArray.getJSONObject(0).getString("in");
+					String name = jsonArray.getJSONObject(0).getString("name");
+					if (in.equals("header") && name.equals("Authorization")) {
+						sb.append("     headers: {'Authorization': getGlobalToken()},\n");
+					}
+				}
+				regex = "     type: 'json',\n" + data +
+						"  })\n" +
+						" }";
+				sb.append(regex).append(System.lineSeparator());
 			}
 		}
-		sb.append(" }").append(System.lineSeparator());
 		Files.write(path, sb.toString().getBytes("utf-8"));
 	}
+
+//	private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+//	private void genMock(String dir, String actionName, JSONObject root) throws IOException {
+//		String fileName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, actionName.replace('-', '_'));
+//		System.out.println(actionName);
+////        if (actionName.equals("dyn-msg-action")) {
+////            System.out.println("dyn-msg-action");
+////            return;
+////        }
+//		Path path = Paths.get(dir, "mock", fileName + "Mock.js");
+//		path.getParent().toFile().mkdirs();
+//		StringBuilder sb = new StringBuilder();
+//		sb.append("/*" + actionName + ",:author:tangzhichao.,DATE:" + format.format(new Date()) + "*/").append(System.lineSeparator());
+//		sb.append(" 'use strict';").append(System.lineSeparator());
+//		sb.append(" var Mock = require('mockjs')").append(System.lineSeparator());
+//		sb.append(" var Random = Mock.Random;").append(System.lineSeparator());
+//		sb.append(" module.exports = {").append(System.lineSeparator());
+//		JSONObject jsonObject = root.getJSONObject("paths");
+//		JSONObject definitionsObj = root.getJSONObject("definitions");
+//		for (Map.Entry<String, Object> pathEntry : jsonObject.entrySet()) {
+//			if (pathEntry.getKey().equals("/")) {
+//				continue;
+//			}
+//			JSONObject pathJson = (JSONObject) pathEntry.getValue();
+//			for (String mk : pathJson.keySet()) {
+//				JSONObject method = pathJson.getJSONObject(mk);
+//				if (!method.getJSONArray("tags").contains(actionName)) {
+//					continue;
+//				}
+//				String url = pathEntry.getKey();
+//				System.out.println(url);
+//				String responseRef = method.getJSONObject("responses").getJSONObject("200").getJSONObject("schema").getString("_ref");
+//				//空数据
+//				String text = "'" + mk.toUpperCase() + " " + url + "': function (req, res, next) {\n" +
+//						"    var data = Mock.mock({\n" +
+//						"      \"code\": '0',\n" +
+//						"      \"data\": " + genMockByRef(responseRef, definitionsObj) + "\n" +
+//						"      \"errorMsg\": '',\n" +
+//						"      \"success\": '',\n" +
+//						"    });\n" +
+//						"    setTimeout(function () {\n" +
+//						"      res.json(data);\n" +
+//						"    }, 500);\n" +
+//						"  },";
+//
+//				sb.append(text).append(System.lineSeparator());
+//			}
+//		}
+//		sb.append(" }").append(System.lineSeparator());
+//		Files.write(path, sb.toString().getBytes("utf-8"));
+//	}
 
 	/**
 	 * @param responseRef
@@ -351,5 +404,13 @@ public class JsMockBus {
 		}
 		sb.append("},");
 		return sb.toString();
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		Method[] ms = this.getClass().getMethods();
+		for (Method m : ms) {
+
+		}
 	}
 }

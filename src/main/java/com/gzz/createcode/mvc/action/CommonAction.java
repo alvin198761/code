@@ -14,8 +14,12 @@ public class CommonAction {
 	/**
 	 * @功能描述: 进入主页面的跳转
 	 */
-	@RequestMapping(path = "/", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String index() {
 		return "index";
+	}
+	@RequestMapping(path = "/login" ,method = RequestMethod.GET)
+	public String login(){
+		return "login_2";
 	}
 }

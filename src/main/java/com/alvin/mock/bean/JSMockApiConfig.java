@@ -9,6 +9,6 @@ import java.util.List;
 public class JSMockApiConfig {
 
     private String url;
-    private String token;
+    private String ctype; //客户端类型
     private List<JSONObject> tags;
 }

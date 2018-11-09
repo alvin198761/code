@@ -1,27 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Swagger from './views/Swagger.vue'
-import Code from './views/Code.vue'
+import CodeGen from './views/sys/CodeGen.vue';
+import SawggerClientGen from './views/sys/SawggerClientGen.vue';
 
 Vue.use(Router)
+
 
 export default new Router({
     routes: [
         {
             path: '/',
-            name: '主页',
             component: Home,
+            name: '首页',
+            redirect: '/code',
             children: [
                 {
-                    path: 'code',
-                    name: '代码生成',
-                    component: Code,
-                },
-                {
-                    path: 'api',
-                    name: 'Swagger客户端生成',
-                    component: Swagger,
+                    path: 'code', component: CodeGen, name: '代码生成',
+                    path: 'swagger', component: SawggerClientGen, name: 'Swagger 客户端'
                 }
             ]
         }

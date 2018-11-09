@@ -1,0 +1,37 @@
+import axios from 'axios';
+import querystring from 'querystring';
+import {getGlobalToken} from '../utils/constant';
+
+
+#foreach ($fun in $funs)
+/**
+* ${fun.note}
+* @params payload
+* @returns ${fun.description}
+*/
+export function ${fun.name}(payload) {
+  return axios({
+        method: '${fun.method}',
+        url: '${fun.url}',
+        headers:${fun.headers},
+        #if($fun.method == 'get')
+        data: ${fun.params}
+        #end
+        #if($fun.method == 'post')
+            #if($fun.reqParamType == 'body')
+            data: JSON.stringify(payload);
+            #end
+            #if($fun.reqParamType == 'formdata')
+            data: ${fun.params}
+            #end
+        #end
+        #if($fun.method == 'put')
+        data: querystring.stringify(payload);
+        #end
+        #if($fun.method == 'delete')
+        data: ${fun.params};
+        #end
+        });
+}
+#end
+
