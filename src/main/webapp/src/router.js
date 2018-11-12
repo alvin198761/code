@@ -17,6 +17,8 @@ export default new Router({
             children: [
                 {
                     path: 'code', component: CodeGen, name: '代码生成',
+                },
+                {
                     path: 'swagger', component: SawggerClientGen, name: 'Swagger 客户端'
                 }
             ]

@@ -10,6 +10,7 @@ import com.alvin.mock.utils.ZipUtils;
 import com.google.common.base.CaseFormat;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.gzz.createcode.common.config.velocity.VelocityEngineService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,8 @@ public class JsMockBus implements InitializingBean {
 	@Autowired
 	private HttpClientService httpClientService;
 
-	private Map<String, Method> methodMap = Maps.newHashMap();
+	@Autowired
+	private VelocityEngineService velocityEngineService;
 
 	public List<JSONObject> queryList(JSMockApiConfig config) {
 		String html = httpClientService.get(config.getUrl());
@@ -40,34 +42,37 @@ public class JsMockBus implements InitializingBean {
 
 
 	public String genCode(JSMockApiConfig config) throws Exception {
-		Method method = this.methodMap.get(config.getCtype());
-		if (method == null) {
-			throw new Exception("没实现的客户端");
-		}
+//		Method method = this.methodMap.get(config.getCtype());
+//		if (method == null) {
+//			throw new Exception("没实现的客户端");
+//		}
 		String html = httpClientService.get(config.getUrl());
 		html = html.replaceAll("[$]ref", "_ref");
 		JSONObject jsonObject = JSONObject.parseObject(html);
 		String dir = "mock_gen_dir";
 		new File(dir).mkdirs();
 
+		String templateName = "/swgclitemplate/Model" + config.getCtype() + "Api_js.vm";
 		config.getTags().stream().forEach(item -> {
 			ActionBean actionBean = new ActionBean();
 			actionBean.setActionName(item.getString("name"));
 			actionBean.setNote(item.getString("description"));
 			createActionMethods(actionBean, jsonObject.getJSONObject("paths"));
+			File output = new File(dir + "/" + actionBean.getActionName() + ".js");
+			velocityEngineService.parse(templateName, actionBean, output.getAbsolutePath());
 		});
 		String file = "swagger_api_client_mock.zip";
 		ZipUtils.doCompress(dir, file);
 		System.gc();
 		File dirFile = new File(dir);
-		//只有两层
-		for (File f : dirFile.listFiles()) {
-			for (File subF : f.listFiles()) {
-				subF.delete();
-			}
-			f.delete();
-		}
-		dirFile.delete();
+//		//只有两层
+//		for (File f : dirFile.listFiles()) {
+//			for (File subF : f.listFiles()) {
+//				subF.delete();
+//			}
+//			f.delete();
+//		}
+//		dirFile.delete();
 		return file;
 
 	}
@@ -80,33 +85,65 @@ public class JsMockBus implements InitializingBean {
 	 * @return
 	 */
 	private void createActionMethods(ActionBean actionBean, JSONObject paths) {
+		List<ActionMethodBean> methods = Lists.newArrayList();
 		for (Map.Entry<String, Object> pathEntry : paths.entrySet()) {
 			if (pathEntry.getKey().equals("/")) {
 				continue;
 			}
 			JSONObject pathJson = (JSONObject) pathEntry.getValue();
-			List<ActionMethodBean> methods = Lists.newArrayList();
+
 			String url = pathEntry.getKey();
 			for (String mk : pathJson.keySet()) {
 				JSONObject method = pathJson.getJSONObject(mk);
 				if (!method.getJSONArray("tags").contains(actionBean.getActionName())) {
 					continue;
 				}
-				methods.add(createMethod(method,url));
+				methods.add(createMethod(mk, method, url));
 			}
-			actionBean.setMethods(methods);
+
 		}
+		actionBean.setMethods(methods);
 	}
 
 	/**
 	 * 构建方法
+	 *
 	 * @param method
 	 * @return
 	 */
-	private ActionMethodBean createMethod(JSONObject method,String url) {
+	private ActionMethodBean createMethod(String mk, JSONObject method, String url) {
 		ActionMethodBean methodBean = new ActionMethodBean();
+		methodBean.setName(url.substring(url.lastIndexOf("/") + 1));
+		url = "'" + url + "'";
+		methodBean.setNote(method.getString("summary"));
+		methodBean.setMethod(mk);
+		methodBean.setDescription(method.getString("description"));
+		methodBean.setConsumes(method.getJSONArray("consumes").getString(0));
+		JSONArray jsonArray = method.getJSONArray("parameters");
+		if (jsonArray == null) {
+			return methodBean;
+		}
+		methodBean.setParams(new JSONObject());
+		for (int i = 0; i < jsonArray.size(); i++) {
+			JSONObject param = jsonArray.getJSONObject(i);
+			if (param.getString("in").equals("header")) {
+				continue;
+			}
+			if (param.getString("in").equals("body")) {
+				methodBean.setReqParamType("body");
+				methodBean.setReqParamType("body");
+				continue;
+			}
+			if (param.getString("in").equals("query")) {
+				methodBean.setReqParamType("formdata");
+				String name = param.getString("name");
+				methodBean.getParams().put(name, param);
+			}
+			if (param.getString("in").equals("path")) {
+				url += " + '/' + " + param.getString("name");
+			}
+		}
 		methodBean.setUrl(url);
-
 		return methodBean;
 	}
 
@@ -170,7 +207,7 @@ public class JsMockBus implements InitializingBean {
 //				sb.append(regex).append(System.lineSeparator());
 			}
 		}
-		Files.write(path, sb.toString().getBytes("utf-8"));
+//		Files.write(path, sb.toString().getBytes("utf-8"));
 
 	}
 
@@ -408,9 +445,9 @@ public class JsMockBus implements InitializingBean {
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		Method[] ms = this.getClass().getMethods();
-		for (Method m : ms) {
-
-		}
+//		Method[] ms = this.getClass().getMethods();
+//		for (Method m : ms) {
+//
+//		}
 	}
 }

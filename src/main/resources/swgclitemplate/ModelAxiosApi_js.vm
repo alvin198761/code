@@ -3,7 +3,7 @@ import querystring from 'querystring';
 import {getGlobalToken} from '../utils/constant';
 
 
-#foreach ($fun in $funs)
+#foreach ($fun in $methods)
 /**
 * ${fun.note}
 * @params payload
@@ -12,26 +12,32 @@ import {getGlobalToken} from '../utils/constant';
 export function ${fun.name}(payload) {
   return axios({
         method: '${fun.method}',
-        url: '${fun.url}',
-        headers:${fun.headers},
+        url: ${fun.url},
+        headers:{
+                'content-type': '${fun.consumes}',
+                'platform':3,
+                'version': 2.0,
+                'channel' : 0,
+                'Authorization' : getGlobalToken()
+        },
         #if($fun.method == 'get')
         data: ${fun.params}
         #end
         #if($fun.method == 'post')
             #if($fun.reqParamType == 'body')
-            data: JSON.stringify(payload);
+        data: JSON.stringify(payload)
             #end
             #if($fun.reqParamType == 'formdata')
-            data: ${fun.params}
+        data: { ... payload}
             #end
         #end
         #if($fun.method == 'put')
-        data: querystring.stringify(payload);
+        data: querystring.stringify(payload)
         #end
         #if($fun.method == 'delete')
-        data: ${fun.params};
+        data: {...payload}
         #end
-        });
+});
 }
 #end
 

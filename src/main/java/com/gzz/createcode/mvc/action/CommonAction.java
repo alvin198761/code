@@ -3,10 +3,11 @@ package com.gzz.createcode.mvc.action;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @功能描述:首页的跳转类
  * @author gzz_gzz@163.com
+ * @功能描述:首页的跳转类
  * @date 2018-02-15
  */
 @Controller
@@ -18,8 +19,14 @@ public class CommonAction {
 	public String index() {
 		return "index";
 	}
-	@RequestMapping(path = "/login" ,method = RequestMethod.GET)
-	public String login(){
+
+	@RequestMapping(path = "/login", method = RequestMethod.GET)
+	public String login() {
 		return "login_2";
+	}
+	@RequestMapping("/api/heartbeat")
+	@ResponseBody
+	public Long heartbeat(){
+		return System.currentTimeMillis();
 	}
 }
