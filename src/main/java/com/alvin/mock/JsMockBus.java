@@ -21,6 +21,8 @@ import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -49,30 +51,32 @@ public class JsMockBus implements InitializingBean {
 		String html = httpClientService.get(config.getUrl());
 		html = html.replaceAll("[$]ref", "_ref");
 		JSONObject jsonObject = JSONObject.parseObject(html);
-		String dir = "mock_gen_dir";
+		String dir = "D:/mock_gen_dir";
 		new File(dir).mkdirs();
 
 		String templateName = "/swgclitemplate/Model" + config.getCtype() + "Api_js.vm";
 		config.getTags().stream().forEach(item -> {
 			ActionBean actionBean = new ActionBean();
+			actionBean.setAuthor("唐植超");
+			actionBean.setDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 			actionBean.setActionName(item.getString("name"));
 			actionBean.setNote(item.getString("description"));
 			createActionMethods(actionBean, jsonObject.getJSONObject("paths"));
 			File output = new File(dir + "/" + actionBean.getActionName() + ".js");
 			velocityEngineService.parse(templateName, actionBean, output.getAbsolutePath());
 		});
-		String file = "swagger_api_client_mock.zip";
+		String file = "D:/swagger_api_client_mock.zip";
 		ZipUtils.doCompress(dir, file);
 		System.gc();
 		File dirFile = new File(dir);
-//		//只有两层
-//		for (File f : dirFile.listFiles()) {
-//			for (File subF : f.listFiles()) {
-//				subF.delete();
-//			}
-//			f.delete();
-//		}
-//		dirFile.delete();
+		//只有两层
+		for (File f : dirFile.listFiles()) {
+			for (File subF : f.listFiles()) {
+				subF.delete();
+			}
+			f.delete();
+		}
+		dirFile.delete();
 		return file;
 
 	}
