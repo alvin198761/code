@@ -3,3 +3,6 @@
 /.classpath
 /.project
 /code.iml
+target
+/.idea/
+.idea

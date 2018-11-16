@@ -70,13 +70,13 @@ public class JsMockBus implements InitializingBean {
 		System.gc();
 		File dirFile = new File(dir);
 		//只有两层
-		for (File f : dirFile.listFiles()) {
-			for (File subF : f.listFiles()) {
-				subF.delete();
-			}
-			f.delete();
-		}
-		dirFile.delete();
+//		for (File f : dirFile.listFiles()) {
+//			for (File subF : f.listFiles()) {
+//				subF.delete();
+//			}
+//			f.delete();
+//		}
+//		dirFile.delete();
 		return file;
 
 	}

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4939a8-64de-4469-a95f-b6809427fa35" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +21,8 @@
       <file leaf-file-name="JsMockBus.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1007">
-              <caret line="78" column="19" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+            <state relative-caret-position="254">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -35,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
@@ -44,10 +48,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ModelAxiosApi_js.vm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="JSMockAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="418">
               <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
               <folding>
                 <element signature="e#886#887#0" expanded="true" />
@@ -142,9 +173,11 @@
         <option value="$PROJECT_DIR$/mock_gen_dir/app-auth-action.js" />
         <option value="$PROJECT_DIR$/mock_gen_dir/bca-analysis-action.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/config/velocity/VelocityEngineService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" />
+        <option value="$PROJECT_DIR$/src/main/resources/.gitignore" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -196,9 +229,9 @@
       <path value="$PROJECT_DIR$/src/main/webapp/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-10" />
-    <option name="y" value="5" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -208,7 +241,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,30 +248,13 @@
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,19 +269,19 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\github_dir\code\src\main\webapp" />
       <recent name="F:\github_dir\code\src\main\resources\commonclass" />
-      <recent name="F:\github_dir\code\src\main\resources\codetemplate" />
-      <recent name="F:\github_dir\code\src\main\resources\codetemplate\data" />
-      <recent name="F:\github_dir\code\src\main\resources\codetemplate\model" />
-      <recent name="F:\github_dir\code\src\main\resources\codetemplate\app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="commonclass" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\github_dir\code\src\main\webapp" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\github_dir\code\src\main\resources" />
       <recent name="F:\github_dir\code\src\main\resources\commonclass" />
+      <recent name="F:\github_dir\code\src\main\resources\codetemplate" />
+      <recent name="F:\github_dir\code\src\main\resources\codetemplate\data" />
+      <recent name="F:\github_dir\code\src\main\resources\codetemplate\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -281,7 +296,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.code [spring-boot:run]">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="RegexTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.alvin.mock.RegexTest" />
       <module name="code" />
@@ -409,14 +424,18 @@
       <workItem from="1542014929112" duration="5558000" />
       <workItem from="1542070701702" duration="5467000" />
       <workItem from="1542164446890" duration="123000" />
+      <workItem from="1542172866824" duration="11000" />
+      <workItem from="1542357255584" duration="2001000" />
+      <workItem from="1542365413590" duration="1657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50286000" />
+    <option name="totallyTimeSpent" value="53955000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -428,17 +447,18 @@
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.3991276" />
+      <window_info anchor="bottom" id="Debug" order="9" visible="true" weight="0.3991276" />
       <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3293348" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.3293348" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.28304905" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.28624734" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -446,7 +466,6 @@
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3293348" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="6" />
@@ -460,28 +479,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="26" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelDialog_vue.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelListExpand_vue.vm">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelController_java.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1444">
@@ -687,28 +688,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mock_gen_dir/app-auth-action.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="418">
           <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
           <folding>
             <element signature="e#886#887#0" expanded="true" />
             <element signature="e#926#927#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="78" column="19" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -726,6 +713,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
