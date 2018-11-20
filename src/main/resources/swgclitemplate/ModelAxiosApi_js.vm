@@ -25,7 +25,7 @@ export  default {
             method: '${fun.method}',
             url: ${fun.url},
             headers:{
-            'content-type': '${fun.consumes}',
+         //   'content-type': '${fun.consumes}',
             'platform':3,
             'version': 2.0,
             'channel' : 0,
