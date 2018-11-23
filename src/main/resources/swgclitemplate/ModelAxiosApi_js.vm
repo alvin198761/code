@@ -32,7 +32,7 @@ export  default {
             'Authorization' : getGlobalToken()
             },
             #if($fun.method == 'get')
-            data: ${fun.params}
+            params: {...payload}
             #end
             #if($fun.method == 'post')
                 #if($fun.reqParamType == 'body')
