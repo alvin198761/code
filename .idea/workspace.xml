@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4939a8-64de-4469-a95f-b6809427fa35" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelCond_java.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/data/Model_java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_templates/jdbc/ModelCond_java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_templates/jdbc/ModelController_java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_templates/jdbc/ModelDao_java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_templates/jdbc/ModelService_java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_templates/jdbc/Model_java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/bean/ProjectConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelController_java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelController_java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelDialog_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelDialog_vue.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelDialog_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelDialog_vue.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelDialog_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelDialog_vue.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelList_vue.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelList_vue.vm" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,87 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JsMockBus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="133">
-                <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelCond_java.vm" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelCond_java.vm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelAxiosApi_js.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JSMockAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
-              <folding>
-                <element signature="e#886#887#0" expanded="true" />
-                <element signature="e#926#927#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -121,13 +51,24 @@
       <find>msiteMock</find>
       <find>swagger_api_client_mock.zip</find>
       <find>createMethod</find>
+      <find>RequestMapping</find>
+      <find>$</find>
+      <find>version</find>
+      <find>low</find>
+      <find>org.alvin.cishan</find>
+      <find>page</find>
+      <find>@author</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
+      <replace>${dollar}</replace>
+      <replace>${project.base_package}</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>F:\github_dir\code\src\main\resources\codetemplate</dir>
       <dir>F:\github_dir\code\src\main\java</dir>
+      <dir>F:\github_dir\code\src\main\resources\codetemplate</dir>
+      <dir>F:\github_dir\code\project_templates\project_name\src\main\java\auth</dir>
+      <dir>F:\github_dir\code\project_templates\base_code\auth</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -136,56 +77,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/model/Field.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/service/JsoupService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelClient_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/app/ModelActionNew_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/model/ModelCondNew_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelDaoNew_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/model/Model_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/model/ModelCond_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelBus_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/RegexTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/service/CodeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/Utils.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelMock_js.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/app/ModelAction_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/commonclass/exception/ParameterException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commonclass/BaseDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/commonclass/util/base/BaseCondition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commonclass/RestfullResp.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelDao_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelDialog_vue.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelDialog_vue.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelDialog_vue.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelController_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelAction_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/web_resp/ModelAction_java.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/Model_js.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CodeAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockApiConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/SwaggerMockMethod.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockFunction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CommonAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionMethodBean.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelReqwestApi_js.vm" />
-        <option value="$PROJECT_DIR$/mock_gen_dir/consultation-action.js" />
-        <option value="$PROJECT_DIR$/mock_gen_dir/app-auth-action.js" />
-        <option value="$PROJECT_DIR$/mock_gen_dir/bca-analysis-action.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/config/velocity/VelocityEngineService.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/.gitignore" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/commons/exception/DefaultExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/commons/exception/ErrorCode.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/commons/exception/ParameterException.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/commons/BaseDao.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/commons/RestfullResp.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/configs/AppConfiguration.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/configs/GlobalSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/configs/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/utils/SqlUtil.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/utils/base/BaseCondition.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDeptBus.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDept.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDeptAction.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDeptCond.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDeptDao.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFunc.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncAction.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncBus.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncCond.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncDao.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRole.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleAction.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleBus.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleCond.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleDao.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDept.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDeptAction.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDeptBus.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDeptCond.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDeptDao.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFunc.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncAction.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncBus.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncCond.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncDao.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUser.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUserAction.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUserBus.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUserCond.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUserDao.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRole.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRoleAction.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRoleBus.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRoleCond.java" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRoleDao.java" />
+        <option value="$PROJECT_DIR$/project_templates/jdbc/Model_java.vm" />
+        <option value="$PROJECT_DIR$/project_templates/jdbc/ModelCond_java.vm" />
+        <option value="$PROJECT_DIR$/project_templates/jdbc/ModelController_java.vm" />
+        <option value="$PROJECT_DIR$/project_templates/jdbc/ModelService_java.vm" />
+        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/utils/Page.java" />
+        <option value="$PROJECT_DIR$/project_templates/jdbc/ModelDao_java.vm" />
       </list>
     </option>
   </component>
@@ -234,6 +176,7 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/project_templates/vue_2_cli3/package.json" />
       <path value="$PROJECT_DIR$/src/main/webapp/package.json" />
     </packageJsonPaths>
   </component>
@@ -250,14 +193,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="project_templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
@@ -269,6 +215,39 @@
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="alvin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="createcode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
@@ -301,28 +280,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="swgclitemplate" type="462c0819:PsiDirectoryNode" />
+              <item name="element_ui_vue" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,19 +302,20 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\github_dir\code\src\main\resources\codetemplate\data" />
-      <recent name="F:\github_dir\code\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\github_dir\code\project_templates" />
+      <recent name="F:\github_dir\code\src\main\webapp" />
       <recent name="F:\github_dir\code\src\main\resources\commonclass" />
-      <recent name="F:\github_dir\code\src\main\resources\codetemplate" />
-      <recent name="F:\github_dir\code\src\main\resources\codetemplate\model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="commonclass" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\github_dir\code\src\main\webapp" />
-      <recent name="F:\github_dir\code\src\main\resources\commonclass" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\github_dir\code\project_templates\project_name\src\main\java\utils" />
+      <recent name="F:\github_dir\code\project_templates" />
+      <recent name="F:\github_dir\code\project_templates\project_name\src\main\java" />
+      <recent name="F:\github_dir\code\project_templates\project_name\src\main\java\configs" />
+      <recent name="F:\github_dir\code\project_templates\project_name\src\main\java\commons" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -499,15 +465,19 @@
       <workItem from="1542702389281" duration="359000" />
       <workItem from="1542968815793" duration="744000" />
       <workItem from="1543298395463" duration="597000" />
+      <workItem from="1543299796362" duration="48000" />
+      <workItem from="1543309483061" duration="126000" />
+      <workItem from="1543310078079" duration="715000" />
+      <workItem from="1543369130255" duration="646000" />
+      <workItem from="1543380416301" duration="4188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57319000" />
+    <option name="totallyTimeSpent" value="63042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -529,9 +499,10 @@
       <window_info anchor="bottom" id="Run" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.29264393" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.29904053" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="6" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -540,7 +511,6 @@
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3293348" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="6" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,264 +525,377 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web/ModelAction_java.vm">
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/commons/exception/ParameterException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="53" selection-start-line="53" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="-275">
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/web_resp/ModelAction_java.vm">
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/commons/BaseDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
-          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+        <state relative-caret-position="76">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/commons/RestfullResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/configs/AppConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/configs/GlobalSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/configs/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="124" column="86" selection-start-line="124" selection-start-column="86" selection-end-line="124" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/utils/SqlUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/utils/base/BaseCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDept.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDeptAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDeptBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDeptCond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/admindept/AdminDeptDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFunc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-59">
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncCond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleCond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDept.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDeptCond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDeptDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFunc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncCond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUserBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUserCond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRoleAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRoleBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRoleCond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminuserrole/AdminUserRoleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/element_ui_vue/ModelList_vue.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="100" column="46" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
+        <state relative-caret-position="297">
+          <caret line="77" column="46" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vue/ModelList_vue.vm">
+    <entry file="file://$PROJECT_DIR$/project_templates/jdbc/Model_java.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2185">
-          <caret line="117" column="46" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
+        <state relative-caret-position="38">
+          <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/Model_js.vm">
+    <entry file="file://$PROJECT_DIR$/project_templates/jdbc/ModelCond_java.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+        <state relative-caret-position="1026">
+          <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/iview_ui_vuex/ModelList_vue.vm">
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+        <state relative-caret-position="-551">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.vue">
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDeptBus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        <state relative-caret-position="38">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminroledept/AdminRoleDeptAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="69" column="47" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="47" />
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CodeAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockApiConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/ZipUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/SwaggerMockMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/softs/JAVA_HOME/jdk/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Override.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="50" selection-start-line="50" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelMockJsClient_js.vm">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/SwgClientMethodBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMockFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/app/Model_java.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/JSMock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CommonAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#500#501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/service/CodeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.8.RELEASE/spring-web-5.0.8.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/club-dynamic-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/daily-summary-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/course-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/branch-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/card-enter-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/report-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/person-heart-rate-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/pay-conf-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/member-related-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/introduce-action.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelReqwestApi_js.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/app-function-action.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/bean/ActionMethodBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/card-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/collect-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/consultation-action.js" />
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/bca-analysis-action.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/config/velocity/VelocityEngineService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mock_gen_dir/app-auth-action.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JSMockAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
-          <folding>
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="133">
-            <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/JsMockBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/.gitignore">
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminsysuser/AdminSysUserAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/project_templates/jdbc/ModelController_java.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="171">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm">
+    <entry file="file://$PROJECT_DIR$/project_templates/jdbc/ModelService_java.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        <state relative-caret-position="38">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/utils/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/data/ModelCond_java.vm">
+    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        <state relative-caret-position="323">
+          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/jdbc/ModelDao_java.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/vue_2_cli3/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

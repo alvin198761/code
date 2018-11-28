@@ -31,7 +31,7 @@ import {Message, Modal} from 'iview';
         #foreach($field in $fList)
             ${field.name} : [
             {required: true, message: '请输入${field.comment}', trigger: 'blur'},
-            {min: 1, max: 10, message: '${field.comment}长度不正确', trigger: 'blur'},
+          //  {min: 1, max: 10, message: '${field.comment}长度不正确', trigger: 'blur'},
         ],
         #end
         }

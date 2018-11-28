@@ -1,8 +1,7 @@
 /*${cName}管理,作者:${auth},日期:${time}*/
 <template>
       <div>
-          <h3>${cName}管理</h3>
-            <hr/>
+          <!-- <h3>${cName}</h3> <hr/> -->
             <Form inline :label-width="70">
                 #foreach($field in $fList)
                     <FormItem label="${field.comment}"><Input placeholder="请输入${field.comment}" v-model="form.${field.name}"/></FormItem>

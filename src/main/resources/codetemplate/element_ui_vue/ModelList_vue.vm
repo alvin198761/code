@@ -1,7 +1,7 @@
 /*${cName}管理,作者:${auth},日期:${time}*/
 <template>
-      <div><h3>${cName}</h3>
-            <hr/>
+      <div>
+          <!-- <h3>${cName}</h3> <hr/> -->
             <el-form :inline="true">
                 #foreach($field in $fList)
                     <el-form-item label="${field.comment}">
@@ -41,7 +41,7 @@
             </el-table>
             <br/>
             <div style="text-align: right" v-if="total > 0">
-              <el-pagination small layout="sizes,prev, pager, next" :current-page="page" :total="total" @current-change="(curr) => {this.page = curr ; this.refresh();}"
+              <el-pagination small layout="total,sizes,prev, pager, next" :current-page="page" :total="total" @current-change="(curr) => {this.page = curr ; this.refresh();}"
                :page-sizes="[10, 15, 20, 100]" @size-change="(s) => {this.size = s ; this.refresh();}" :page-size="size"></el-pagination>
             </div>
         <${clsUpp}Dialog ref="dialog" :refresh="refresh"></${clsUpp}Dialog>
