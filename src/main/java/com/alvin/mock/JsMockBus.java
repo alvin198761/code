@@ -6,11 +6,11 @@ import com.alvin.mock.bean.ActionBean;
 import com.alvin.mock.bean.ActionMethodBean;
 import com.alvin.mock.bean.JSMockApiConfig;
 import com.alvin.mock.service.HttpClientService;
+import com.alvin.mock.utils.VelocityUtil;
 import com.alvin.mock.utils.ZipUtils;
 import com.google.common.base.CaseFormat;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.gzz.createcode.common.config.velocity.VelocityEngineService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,9 +32,6 @@ public class JsMockBus implements InitializingBean {
 
 	@Autowired
 	private HttpClientService httpClientService;
-
-	@Autowired
-	private VelocityEngineService velocityEngineService;
 
 	public List<JSONObject> queryList(JSMockApiConfig config) {
 		String html = httpClientService.get(config.getUrl());
@@ -63,20 +60,20 @@ public class JsMockBus implements InitializingBean {
 			actionBean.setNote(item.getString("description"));
 			createActionMethods(actionBean, jsonObject.getJSONObject("paths"));
 			File output = new File(dir + "/" + actionBean.getActionName() + ".js");
-			velocityEngineService.parse(templateName, actionBean, output.getAbsolutePath());
+			VelocityUtil.parse(templateName, actionBean, output.getAbsolutePath(), VelocityUtil.classPathVelocityEngine());
 		});
 		String file = "D:/swagger_api_client_mock.zip";
 		ZipUtils.doCompress(dir, file);
 		System.gc();
 		File dirFile = new File(dir);
 		//只有两层
-//		for (File f : dirFile.listFiles()) {
-//			for (File subF : f.listFiles()) {
-//				subF.delete();
-//			}
-//			f.delete();
-//		}
-//		dirFile.delete();
+		for (File f : dirFile.listFiles()) {
+			for (File subF : f.listFiles()) {
+				subF.delete();
+			}
+			f.delete();
+		}
+		dirFile.delete();
 		return file;
 
 	}

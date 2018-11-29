@@ -1,5 +1,18 @@
 package com.gzz.createcode.mvc.service;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alvin.mock.utils.VelocityUtil;
+import com.google.common.base.CaseFormat;
+import com.google.common.collect.Lists;
+import com.gzz.createcode.common.Utils;
+import com.gzz.createcode.common.config.ScanDriverService;
+import com.gzz.createcode.mvc.dao.CodeDao;
+import com.gzz.createcode.mvc.model.CodeCond;
+import com.gzz.createcode.mvc.model.Field;
+import com.gzz.createcode.mvc.model.Table;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -7,20 +20,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.alibaba.fastjson.JSONObject;
-import com.google.common.collect.Lists;
-import com.gzz.createcode.common.config.ScanDriverService;
-import com.gzz.createcode.common.config.velocity.VelocityEngineService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.google.common.base.CaseFormat;
-import com.gzz.createcode.common.Utils;
-import com.gzz.createcode.mvc.dao.CodeDao;
-import com.gzz.createcode.mvc.model.CodeCond;
-import com.gzz.createcode.mvc.model.Field;
-import com.gzz.createcode.mvc.model.Table;
 
 
 /**
@@ -34,8 +33,6 @@ public class CodeService {
 	@Autowired
 	protected CodeDao dao;
 
-	@Autowired
-	private VelocityEngineService velocityEngineService;
 	@Autowired
 	private ScanDriverService scanDriverService;
 
@@ -134,7 +131,7 @@ public class CodeService {
 			System.out.println("=================start VelocityEngine==================");
 			jsonObject.put("pName", pName);
 			Files.createDirectories(Paths.get(path).getParent());
-			velocityEngineService.parse(vm, jsonObject, path + fileType.replace('_', '.'));
+			VelocityUtil.parse(vm, jsonObject, path + fileType.replace('_', '.'), VelocityUtil.classPathVelocityEngine());
 			System.out.println("=================end VelocityEngine==================");
 		}
 	}
