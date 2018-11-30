@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4939a8-64de-4469-a95f-b6809427fa35" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelCond_java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelCond_java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelDao_java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelDao_java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,26 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ModelDao_java.vm" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelDao_java.vm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="147" column="7" lean-forward="true" selection-start-line="147" selection-start-column="7" selection-end-line="147" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelCond_java.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelCond_java.vm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,7 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncCond.java" />
         <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminfunc/AdminFuncDao.java" />
         <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRole.java" />
         <option value="$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrole/AdminRoleAction.java" />
@@ -136,6 +115,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelService_java.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelCond_java.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelDao_java.vm" />
+        <option value="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" />
       </list>
     </option>
   </component>
@@ -201,8 +181,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,21 +232,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codetemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="sigle_code_gen_common" type="462c0819:PsiDirectoryNode" />
+              <item name="swgclitemplate" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -457,15 +428,15 @@
       <workItem from="1543464056941" duration="1051000" />
       <workItem from="1543552656969" duration="2863000" />
       <workItem from="1543557079072" duration="1570000" />
+      <workItem from="1543562915578" duration="110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73253000" />
+    <option name="totallyTimeSpent" value="73363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -487,7 +458,7 @@
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.30863538" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.31183368" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -513,7 +484,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFunc.java" />
     <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncAction.java" />
     <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncBus.java" />
     <entry file="file://$PROJECT_DIR$/project_templates/project_name/src/main/java/auth/adminrolefunc/AdminRoleFuncCond.java" />
@@ -701,17 +671,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelCond_java.vm">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        <state relative-caret-position="639">
+          <caret line="41" column="20" lean-forward="true" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelDao_java.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="147" column="7" lean-forward="true" selection-start-line="147" selection-start-column="7" selection-end-line="147" selection-end-column="7" />
+        <state relative-caret-position="355">
+          <caret line="147" column="7" selection-start-line="147" selection-start-column="7" selection-end-line="147" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelCond_java.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
         </state>
       </provider>
     </entry>
