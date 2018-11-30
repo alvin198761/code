@@ -74,7 +74,7 @@ public class ${clsUpp}Dao extends BaseDao{
         StringBuilder sb = new StringBuilder("SELECT ");
         sb.append(this.getSelectedItems(cond));
         sb.append(" FROM ${tName} t ");
-        sb.append(getJoinTables());
+        sb.append(super.getJoinTables(cond));
         sb.append(" WHERE 1=1 ");
         sb.append(cond.getCondition());
         //sb.append(cond.getOrderSql());//增加排序子句;
@@ -89,7 +89,7 @@ public class ${clsUpp}Dao extends BaseDao{
         StringBuilder sb = new StringBuilder("SELECT ");
         sb.append(this.getSelectedItems(cond));
         sb.append(" FROM ${tName} t ");
-        sb.append(getJoinTables());
+        sb.append(super.getJoinTables(cond));
         sb.append(" WHERE 1=1 ");
     	sb.append(cond.getCondition());
     	//sb.append(" ORDER BY operate_time DESC");
@@ -103,7 +103,7 @@ public class ${clsUpp}Dao extends BaseDao{
         StringBuilder sb = new StringBuilder("SELECT ");
         sb.append(this.getSelectedItems(null));
         sb.append(" FROM ${tName} t ");
-        sb.append(getJoinTables());
+        sb.append(super.getJoinTables(null));
         sb.append(" WHERE 1=1 ");
     	sb.append(" AND t.${idName}=?");
     	return jdbcTemplate.queryForObject(sb.toString(), new Object[]{id}, new BeanPropertyRowMapper<>(${clsUpp}.class));
@@ -123,6 +123,47 @@ public class ${clsUpp}Dao extends BaseDao{
     public int deleteLogic(${idType} ids[]) {
     	String sql = "UPDATE ${tName} SET delete_remark=1 WHERE ${idName}" + SqlUtil.ArrayToIn(ids);
     	return jdbcTemplate.update(sql);
+    }
+
+    /**
+    * 所有表连接语句
+    * @return
+    */
+    @Override
+    protected String joinTables() {
+     return super.joinTables();
+    }
+
+    /**
+    * 根据传入的列 和 ID 更新某一条数据
+    *
+    * @param cols
+    * @param vo
+    * @return
+    */
+    public int update(List<String> cols, ${clsUpp} vo) {
+        return super.update(cols, vo, "${tName}", "${idName}");
+    }
+
+    /**
+    * 根据传入的属性和更新条件更新多条数据
+    *
+    * @param condition
+    * @param fields
+    * @return
+    */
+    public int updateAllByCondition(${clsUpp}Cond condition, List<String> fields) {
+        return super.updateAllByCondition(condition, "${tName}", fields);
+     }
+
+    /**
+    * 将对象不为空的属性更新到数据库（一条数据）
+    *
+    * @param vo
+    * @return
+    */
+    public int updateFieldNotNull(${clsUpp} vo) {
+        return super.updateFieldNotNull(vo, "${tName}", "${idName}");
     }
 
 }
