@@ -18,3 +18,7 @@ spring:
 #      key-store-password: 38967098gzz
 #      keyStoreType: PKCS12
 #      keyAlias: jetty
+gen:
+  project:
+    outdir: D:/pro_dir
+    datadir: D:/pro_data

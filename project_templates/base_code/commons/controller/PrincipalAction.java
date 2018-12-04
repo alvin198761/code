@@ -7,7 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import java.security.Principal;
 
 /**
- * @author ${author
+ * @author ${project.author}
  * @功能说明 controller共用的取权限的方法, 需要权限时Controller继承本类即可
  * @date ${project.date}
  */

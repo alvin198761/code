@@ -9,10 +9,9 @@ import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.apache.velocity.runtime.resource.loader.FileResourceLoader;
+import org.apache.velocity.runtime.resource.loader.JarResourceLoader;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.Writer;
 import java.nio.charset.Charset;
 import java.util.Properties;
@@ -50,6 +49,7 @@ public class VelocityUtil {
 		properties.setProperty(Velocity.ENCODING_DEFAULT, "utf-8");
 		properties.setProperty(Velocity.INPUT_ENCODING, "utf-8");
 		properties.setProperty(Velocity.OUTPUT_ENCODING, "utf-8");
+		properties.setProperty(VelocityEngine.FILE_RESOURCE_LOADER_PATH, System.getProperty("user.dir"));
 		//实例化一个VelocityEngine对象
 		return new VelocityEngine(properties);
 	}
@@ -66,7 +66,7 @@ public class VelocityUtil {
 		//设置velocity资源加载方式为jar
 		properties.setProperty("resource.loader", "jar");
 		//设置velocity资源加载方式为file时的处理类
-		properties.setProperty("jar.resource.loader.class", "org.apache.velocity.runtime.resource.loader.JarResourceLoader");
+		properties.setProperty("jar.resource.loader.class", JarResourceLoader.class.getName());
 		properties.setProperty(Velocity.ENCODING_DEFAULT, "utf-8");
 		properties.setProperty(Velocity.INPUT_ENCODING, "utf-8");
 		properties.setProperty(Velocity.OUTPUT_ENCODING, "utf-8");
@@ -92,9 +92,7 @@ public class VelocityUtil {
 		try (Writer writer = Files.newWriter(new File(outPath), Charset.forName("utf-8"))) {
 			t.merge(ctx, writer);
 			writer.flush();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
