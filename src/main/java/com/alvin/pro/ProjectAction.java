@@ -1,6 +1,5 @@
 package com.alvin.pro;
 
-import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +13,6 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/project")
@@ -61,6 +59,11 @@ public class ProjectAction {
 		}
 		System.gc();
 		Files.delete(path);
+	}
+
+	@RequestMapping("list")
+	public List<ProjectConfig> list(){
+		return this.projectService.getProjects();
 	}
 
 	@GetMapping("test")

@@ -2,50 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4939a8-64de-4469-a95f-b6809427fa35" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/project_templates/entity/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/entity/ModelAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/entity/ModelCond.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/entity/ModelDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/entity/ModelDialog.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/entity/ModelList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/entity/ModelMock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/entity/ModelService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/sql/mysql.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/proxy.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/public/js/jquery.md5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/public/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/public/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/shell/CopyResourceToDist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/shell/changeConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/src/login/Login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/src/login/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/src/views/common/dsy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/src/views/common/http.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/src/views/common/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/src/views/common/vue-filters.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/src/views/common/vue-plugins.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/src/views/common/zoneService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/vue.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/vue.config.js.dev" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/vue.config.js.prod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/TypeBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_templates/base_code/commons/controller/PrincipalAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/project_templates/base_code/commons/controller/PrincipalAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_templates/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project_templates/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_templates/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project_templates/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_templates/vue_2_cli3/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_templates/vue_2_cli3/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_templates/vue_2_cli3/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project_templates/vue_2_cli3/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/VelocityUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/VelocityUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/Number.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/service/CodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/service/CodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +20,7 @@
       <file leaf-file-name="Login.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project_templates/vue_2_cli3/src/login/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="1007">
               <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
@@ -69,17 +29,76 @@
       <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/package-lock.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
+            <state relative-caret-position="2413">
               <caret line="127" column="35" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project_templates/vue_2_cli3/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="646">
+              <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2107#2108#0" expanded="true" />
+                <element signature="e#2154#2155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-948">
+              <caret line="250" column="52" selection-start-line="250" selection-start-column="52" selection-end-line="250" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="20" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntityConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -187,7 +206,6 @@
         <option value="$PROJECT_DIR$/project_templates/entity/ModelService_java.vm" />
         <option value="$PROJECT_DIR$/project_templates/entity/rule.json" />
         <option value="$PROJECT_DIR$/project_templates/sql/mysql.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" />
         <option value="$PROJECT_DIR$/project_templates/entity/ModelCond.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/VelocityUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" />
@@ -199,6 +217,7 @@
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/public/index.html" />
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/src/login/Login.vue" />
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/package.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" />
       </list>
     </option>
   </component>
@@ -251,7 +270,7 @@
       <path value="$PROJECT_DIR$/src/main/webapp/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-22" />
     <option name="y" value="25" />
     <option name="width" value="1936" />
@@ -263,8 +282,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,27 +306,6 @@
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="project_templates" type="462c0819:PsiDirectoryNode" />
-              <item name="vue_2_cli3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="project_templates" type="462c0819:PsiDirectoryNode" />
-              <item name="vue_2_cli3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="project_templates" type="462c0819:PsiDirectoryNode" />
-              <item name="vue_2_cli3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -320,15 +319,34 @@
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="alvin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="alvin" type="462c0819:PsiDirectoryNode" />
+              <item name="pro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
@@ -336,8 +354,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
@@ -368,7 +384,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -575,12 +590,13 @@
       <workItem from="1543812773818" duration="9729000" />
       <workItem from="1543826566184" duration="1047000" />
       <workItem from="1543886064612" duration="911000" />
-      <workItem from="1543887064575" duration="17484000" />
+      <workItem from="1543887064575" duration="17956000" />
+      <workItem from="1543974736210" duration="6416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102534000" />
+    <option name="totallyTimeSpent" value="109422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -588,7 +604,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="0" weight="0.1684435" />
+      <window_info anchor="right" id="Maven Projects" order="0" visible="true" weight="0.1684435" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="0" />
@@ -598,7 +614,6 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="9" visible="true" weight="0.37840787" />
       <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.22682661" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" />
@@ -607,17 +622,18 @@
       <window_info anchor="bottom" id="Run" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17004265" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.1716418" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3293348" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.22682661" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.3293348" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +644,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -681,16 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/Number.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -723,21 +729,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project_templates/base_code/utils/SqlUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sqltemplates/mysql.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sqltemplates/mysql.vm" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/action/CodeAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -749,13 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -797,37 +784,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project_templates/entity/rule.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project_templates/entity/rule.json" />
     <entry file="file://$PROJECT_DIR$/project_templates/sql/mysql.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -842,16 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="250" column="52" selection-start-line="250" selection-start-column="52" selection-end-line="250" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -936,9 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,22 +899,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project_templates/vue_2_cli3/src/login/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="1007">
           <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
+        <state relative-caret-position="2413">
           <caret line="127" column="35" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project_templates/vue_2_cli3/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="646">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-948">
+          <caret line="250" column="52" selection-start-line="250" selection-start-column="52" selection-end-line="250" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2107#2108#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
