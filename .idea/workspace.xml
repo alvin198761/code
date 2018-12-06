@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cb4939a8-64de-4469-a95f-b6809427fa35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectDialog.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/EntityDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/views/sys/EntityDialog.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectAction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProjectAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            <state relative-caret-position="333">
+              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2107#2108#0" expanded="true" />
@@ -58,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="320" column="7" lean-forward="true" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
+            <state relative-caret-position="219">
+              <caret line="85" column="27" lean-forward="true" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,8 +77,8 @@
       <file leaf-file-name="ProjectConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="330">
+              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,20 +89,13 @@
       <file leaf-file-name="EntityConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="171">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#752#753#0" expanded="true" />
+                <element signature="e#784#785#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FieldConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -188,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/codetemplate/sigle_code_gen_common/ModelDao_java.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/swgclitemplate/ModelAxiosApi_js.vm" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/TypeBean.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/project_templates/resources/application.yml" />
@@ -197,7 +193,6 @@
         <option value="$PROJECT_DIR$/project_templates/pom.xml" />
         <option value="$PROJECT_DIR$/project_templates/assembly/assembly.xml" />
         <option value="$PROJECT_DIR$/project_templates/base_code/commons/controller/PrincipalAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/mvc/service/CodeService.java" />
         <option value="$PROJECT_DIR$/project_templates/entity/Model_java.vm" />
         <option value="$PROJECT_DIR$/project_templates/entity/ModelAction_java.vm" />
@@ -208,7 +203,6 @@
         <option value="$PROJECT_DIR$/project_templates/sql/mysql.sql" />
         <option value="$PROJECT_DIR$/project_templates/entity/ModelCond.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/VelocityUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" />
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/vue.config.js" />
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/vue.config.js.dev" />
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/src/login/main.js" />
@@ -217,6 +211,9 @@
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/public/index.html" />
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/src/login/Login.vue" />
         <option value="$PROJECT_DIR$/project_templates/vue_2_cli3/package.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" />
       </list>
     </option>
@@ -244,11 +241,6 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="code" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="code" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
         </path>
         <path>
@@ -270,7 +262,7 @@
       <path value="$PROJECT_DIR$/src/main/webapp/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-22" />
     <option name="y" value="25" />
     <option name="width" value="1936" />
@@ -283,25 +275,12 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="project_templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="project_templates" type="462c0819:PsiDirectoryNode" />
-              <item name="assembly" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
@@ -384,6 +363,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -593,14 +574,16 @@
       <workItem from="1543887064575" duration="17956000" />
       <workItem from="1543974736210" duration="7155000" />
       <workItem from="1544057801977" duration="919000" />
+      <workItem from="1544070228875" duration="704000" />
+      <workItem from="1544091438620" duration="2590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111080000" />
+    <option name="totallyTimeSpent" value="114374000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-22" y="25" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
@@ -615,6 +598,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.37840787" />
       <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.22682661" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" />
@@ -623,7 +607,7 @@
       <window_info anchor="bottom" id="Run" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17324094" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17324094" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -631,7 +615,6 @@
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.22682661" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3293348" />
@@ -919,27 +902,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="461">
+          <caret line="34" column="43" lean-forward="true" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="171">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="219">
+          <caret line="85" column="27" lean-forward="true" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -948,22 +948,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="333">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2107#2108#0" expanded="true" />
             <element signature="e#2154#2155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="320" column="7" lean-forward="true" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

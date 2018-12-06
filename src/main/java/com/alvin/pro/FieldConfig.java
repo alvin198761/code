@@ -6,6 +6,8 @@ package com.alvin.pro;
 
 import lombok.Data;
 
+import java.util.Objects;
+
 @Data
 public class FieldConfig {
 
@@ -25,4 +27,17 @@ public class FieldConfig {
 	private String sql_type;
 	//是否为空
 	private String isNull = "NULL";
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof FieldConfig)) return false;
+		FieldConfig that = (FieldConfig) o;
+		return Objects.equals(name, that.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name);
+	}
 }

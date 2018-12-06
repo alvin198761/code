@@ -28,10 +28,10 @@ public class ProjectAction {
 		return this.projectService.save(projectConfig);
 	}
 
-	@PostMapping("addEntity")
-	public int addEntity(@RequestBody EntityConfig entityConfig) {
-		return this.projectService.addEntity(entityConfig);
-	}
+//	@PostMapping("addEntity")
+//	public int addEntity(@RequestBody EntityConfig entityConfig) {
+//		return this.projectService.addEntity(entityConfig);
+//	}
 
 	@RequestMapping("genProject")
 	public String genProject(@RequestParam("projectName") String projectName) throws IOException {

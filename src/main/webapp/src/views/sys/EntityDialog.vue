@@ -17,10 +17,10 @@
                 <template slot-scope="props">
                     <el-select size="small" v-model="props.row.type" placeholder="请选择类型">
                         <el-option
-                                   v-for="item in types"
-                                   :key="item.value"
-                                   :label="item.label"
-                                   :value="item.value">
+                                v-for="item in types"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
                         </el-option>
                     </el-select>
                 </template>
@@ -37,9 +37,10 @@
                     </el-select>
                 </template>
             </el-table-column>
-            <el-table-column prop="length" label="长度"  width="200">
+            <el-table-column prop="length" label="长度" width="200">
                 <template slot-scope="props">
-                    <el-input-number v-model="props.row.length" :disabled="props.row.type != 'java.lang.String'" :min="0" :max="999999" size="small"></el-input-number>
+                    <el-input-number v-model="props.row.length" :disabled="props.row.type != 'java.lang.String'"
+                                     :min="0" :max="999999" size="small"></el-input-number>
                 </template>
             </el-table-column>
             <el-table-column prop="remark" label="注释">
@@ -64,20 +65,21 @@
             </el-table-column>
             <el-table-column label="操作" width="150">
                 <template slot-scope="props">
-                    <el-button type="text" size="small" @click="removeArray(entity.fields,props.row)" >删除</el-button>
+                    <el-button type="text" size="small" @click="removeArray(entity.fields,props.row)">删除</el-button>
                     <el-button type="text" size="small" @click="entity.fields.push({})">追加</el-button>
                 </template>
             </el-table-column>
         </el-table>
         <div slot="footer">
-            <el-button>取 消</el-button>
-            <el-button type="primary">确 定</el-button>
+            <!--<el-button @click="show=false">取 消</el-button>-->
+            <el-button type="primary" @click="saveEntity">确 定</el-button>
         </div>
     </el-dialog>
 </template>
 <script>
 
     export default{
+        props: ["saveProject"],
         components: {},
         data: function () {
             return {
@@ -180,47 +182,55 @@
                 this.project = project;
                 this.entity = {...entity};
                 this.oldName = entity.name;
-                if(this.entity.fields != null){
-                    this.entity.fields = this.entity.fields.map(item =>{
-                        let data = {...item};
-                        data.isNullChecked = data.isNull == 'NULL'
-                        data.isPrimaryKeyChecked = entity.idName == data.name;
-                        data.isLabelChecked = entity.labalName == data.name;
-                        return data;
-                    });
-                }
                 if (this.entity.fields == null || this.entity.fields.length == 0) {
                     this.entity.fields = [{}];
                 }
 
                 this.show = true;
             },
-            removeArray (_arr,_obj) {
+            removeArray (_arr, _obj) {
                 var length = _arr.length;
-                for(var i = 0; i < length; i++)
-                {
-                    if(_arr[i] == _obj)
-                    {
-                        if(i == 0)
-                        {
+                for (var i = 0; i < length; i++) {
+                    if (_arr[i] == _obj) {
+                        if (i == 0) {
                             _arr.shift(); //删除并返回数组的第一个元素
                             break;
                         }
-                        else if(i == length-1)
-                        {
+                        else if (i == length - 1) {
                             _arr.pop();  //删除并返回数组的最后一个元素
                             break;
                         }
-                        else
-                        {
-                            _arr.splice(i,1); //删除下标为i的元素
+                        else {
+                            _arr.splice(i, 1); //删除下标为i的元素
                             break;
                         }
                     }
                 }
-                if(_arr.length == 0){
+                if (_arr.length == 0) {
                     _arr.push({});
                 }
+            },
+            saveEntity(){
+                const that = this;
+                this.entity.fields = this.entity.fields.map(field => {
+                    field.isNull = field.isNullChecked ? "NULL" : "NOT NULL";
+                    if (field.isPrimaryKeyChecked == true) {
+                        that.entity.idName = field.name;
+                    }
+                    if (field.isLabelChecked == true) {
+                        that.entity.labalName = field.name;
+                    }
+                    return field;
+                });
+                for (let i = 0; i < this.project.entitys.length; i++) {
+                    let entity = this.project.entitys[i];
+                    if (entity.name == this.entity.name) {
+                        this.project.entitys.splice(i, 1, this.entity);
+                        break;
+                    }
+                }
+                this.saveProject();
+                this.show = false;
             }
         },
 

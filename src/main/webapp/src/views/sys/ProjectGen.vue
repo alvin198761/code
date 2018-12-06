@@ -12,7 +12,7 @@
                         <el-button type="primary" style="width: 100%" @click="refresh" size="small">刷新</el-button>
                     </el-col>
                     <el-col :span="12">
-                        <el-button size="small" style="width: 100%">新增项目</el-button>
+                        <el-button size="small" style="width: 100%" @click="form ={ entitys:[{}]}">新增项目</el-button>
                     </el-col>
                 </el-row>
                 <el-card style="margin-top: 10px;">
@@ -47,7 +47,7 @@
                             </el-form-item>
                         </el-col>
                     </el-row>
-                    <el-row>
+                    <el-row :gutter="20">
                         <el-col>
                             <el-form-item label="项目描述" prop="remark">
                                 <el-input v-model="form.remark" placeholder="请输入项目作者" type="textarea" size="small"
@@ -114,21 +114,26 @@
                                     </el-table-column>
                                     <el-table-column label="操作">
                                         <template slot-scope="props">
-                                            <el-button type="text" size="small" @click="editDialog(props.row)">编辑属性</el-button>
-                                            <el-button type="text" size="small">删除</el-button>
-                                            <el-button type="text" size="small">保存</el-button>
-                                            <el-button type="text" size="small">增加</el-button>
-                                            <el-button type="text" size="small">生成</el-button>
+                                            <el-button type="text" size="small" @click="editDialog(props.row)">编辑属性
+                                            </el-button>
+                                            <el-button type="text" size="small"
+                                                       @click="removeArray(form.entitys,props.row)">删除
+                                            </el-button>
+                                            <el-button type="text" size="small" @click="form.entitys.push({})">追加
+                                            </el-button>
                                         </template>
                                     </el-table-column>
                                 </el-table>
                             </el-form-item>
                         </el-col>
                     </el-row>
+                    <el-form-item label="操作">
+                        <el-button type="primary" @click="save">保存</el-button>
+                    </el-form-item>
                 </el-form>
             </el-col>
         </el-row>
-        <ProjectDialog ref="dialog"></ProjectDialog>
+        <ProjectDialog ref="dialog" :saveProject="save"></ProjectDialog>
     </div>
 </template>
 <script>
@@ -171,10 +176,22 @@
         },
         methods: {
             refresh(){
+                this.form ={ entitys:[{}]};
                 const that = this;
                 that.loading = true;
                 this.$http.post("/api/project/list", JSON.stringify({})).then(res => {
-                    that.dataList = res.data;
+                    that.dataList = res.data.map(pro =>{
+                        pro.entitys = pro.entitys.map(entity =>{
+                            entity.fields = entity.fields.map(field =>{
+                                field.isNullChecked = field.isNull == 'NULL'
+                                field.isPrimaryKeyChecked = entity.idName == field.name;
+                                field.isLabelChecked = entity.labalName == field.name;
+                                return field;
+                            });
+                            return entity;
+                        })
+                        return pro;
+                    });
                     that.loading = false;
                 }).catch(res => {
                     that.$message.error("获取项目列表失败")
@@ -189,6 +206,35 @@
             },
             clickNode(data){
                 this.form = {...data};
+            },
+            removeArray (_arr, _obj) {
+                var length = _arr.length;
+                for (var i = 0; i < length; i++) {
+                    if (_arr[i] == _obj) {
+                        if (i == 0) {
+                            _arr.shift(); //删除并返回数组的第一个元素
+                            break;
+                        }
+                        else if (i == length - 1) {
+                            _arr.pop();  //删除并返回数组的最后一个元素
+                            break;
+                        }
+                        else {
+                            _arr.splice(i, 1); //删除下标为i的元素
+                            break;
+                        }
+                    }
+                }
+                if (_arr.length == 0) {
+                    _arr.push({});
+                }
+            },
+            save(){
+                const that = this;
+                that.$http.post("/api/project/save", JSON.stringify(this.form)).then(res => {
+                }).catch(res => {
+                    this.$message.error("保存出错");
+                });
             }
         }
     }

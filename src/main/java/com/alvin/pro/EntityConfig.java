@@ -1,8 +1,10 @@
 package com.alvin.pro;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 实体类配置
@@ -28,6 +30,18 @@ public class EntityConfig {
 	private List<FieldConfig> fields;
 
 	//-----------
-	private String projectName; //添加类时候用
+//	private String projectName; //添加类时候用
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof EntityConfig)) return false;
+		EntityConfig that = (EntityConfig) o;
+		return Objects.equals(name, that.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name);
+	}
 }

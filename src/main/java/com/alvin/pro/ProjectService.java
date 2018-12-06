@@ -45,24 +45,29 @@ public class ProjectService {
 		}
 	}
 
-	/**
-	 * 添加实体类
-	 *
-	 * @param entityConfig
-	 * @return
-	 */
-	public int addEntity(EntityConfig entityConfig) {
-		File file = new File(projectDataDir, entityConfig.getProjectName().concat(".json"));
-		try {
-			ProjectConfig config = JSONObject.parseObject(Files.readAllBytes(Paths.get(file.toURI())), ProjectConfig.class);
-			entityConfig.setProjectName(null);
-			config.getEntitys().add(entityConfig);
-			return save(config);
-		} catch (IOException e) {
-			e.printStackTrace();
-			return 0;
-		}
-	}
+//	/**
+//	 * 添加实体类
+//	 *
+//	 * @param entityConfig
+//	 * @return
+//	 */
+//	public int addEntity(EntityConfig entityConfig) {
+//		File file = new File(projectDataDir, entityConfig.getProjectName().concat(".json"));
+//		try {
+//			ProjectConfig config = JSONObject.parseObject(Files.readAllBytes(Paths.get(file.toURI())), ProjectConfig.class);
+//			entityConfig.setProjectName(null);
+//			int index = config.getEntitys().indexOf(entityConfig);
+//			if (index == -1) {
+//				config.getEntitys().add(entityConfig);
+//			} else {
+//				config.getEntitys().set(index, entityConfig);
+//			}
+//			return save(config);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//			return 0;
+//		}
+//	}
 
 	/**
 	 * 生成项目
@@ -331,16 +336,18 @@ public class ProjectService {
 		if (!file.isDirectory()) {
 			return Lists.newArrayList();
 		}
-		return Lists.newArrayList(file.listFiles((dir, name) -> name.toLowerCase().endsWith(".json"))).stream().map(item ->
-				{
-					try {
-						return JSONObject.parseObject(Files.readAllBytes(Paths.get(item.toURI())), ProjectConfig.class);
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					return (ProjectConfig) null;
-				}
-		).filter(item -> item != null).collect(Collectors.toList());
+		return Lists.newArrayList(file.listFiles((dir, name) -> name.toLowerCase().endsWith(".json")))
+				.stream()
+				.map(item ->
+						{
+							try {
+								return JSONObject.parseObject(Files.readAllBytes(Paths.get(item.toURI())), ProjectConfig.class);
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							return (ProjectConfig) null;
+						}
+				).filter(item -> item != null).collect(Collectors.toList());
 	}
 
 	/**
