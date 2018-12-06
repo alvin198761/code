@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cb4939a8-64de-4469-a95f-b6809427fa35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectDialog.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,8 +47,8 @@
       <file leaf-file-name="ProjectAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            <state relative-caret-position="254">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2107#2108#0" expanded="true" />
@@ -58,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-948">
-              <caret line="250" column="52" selection-start-line="250" selection-start-column="52" selection-end-line="250" selection-end-column="52" />
+            <state relative-caret-position="380">
+              <caret line="320" column="7" lean-forward="true" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectConfig.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProjectConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="418">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,7 +85,7 @@
       <file leaf-file-name="EntityConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="475">
               <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -97,8 +97,8 @@
       <file leaf-file-name="FieldConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            <state relative-caret-position="513">
+              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -270,7 +270,7 @@
       <path value="$PROJECT_DIR$/src/main/webapp/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-22" />
     <option name="y" value="25" />
     <option name="width" value="1936" />
@@ -282,8 +282,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -591,15 +591,16 @@
       <workItem from="1543826566184" duration="1047000" />
       <workItem from="1543886064612" duration="911000" />
       <workItem from="1543887064575" duration="17956000" />
-      <workItem from="1543974736210" duration="6416000" />
+      <workItem from="1543974736210" duration="7155000" />
+      <workItem from="1544057801977" duration="919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109422000" />
+    <option name="totallyTimeSpent" value="111080000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-22" y="25" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
@@ -612,7 +613,7 @@
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="9" visible="true" weight="0.37840787" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.37840787" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
@@ -622,7 +623,7 @@
       <window_info anchor="bottom" id="Run" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.1716418" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17324094" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -920,7 +921,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="475">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -930,15 +931,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/FieldConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="513">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-948">
-          <caret line="250" column="52" selection-start-line="250" selection-start-column="52" selection-end-line="250" selection-end-column="52" />
+        <state relative-caret-position="418">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -947,8 +948,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="254">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2107#2108#0" expanded="true" />
@@ -957,10 +958,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="20" selection-end-column="31" />
+        <state relative-caret-position="380">
+          <caret line="320" column="7" lean-forward="true" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

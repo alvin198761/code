@@ -1,33 +1,4 @@
 <template>
-    <!--<div>-->
-    <!--<el-form ref="form" :model="form" :rules="rules" inline>-->
-    <!--<el-form-item prop="search">-->
-    <!--<el-input type="text" v-model="form.search" size="small" placeholder="名称/前端过滤">-->
-    <!--</el-input>-->
-    <!--</el-form-item>-->
-    <!--<el-form-item>-->
-    <!--<el-button type="primary" @click="refresh" size="small">刷新</el-button>-->
-    <!--<el-button @click="addDialog" size="small">新增项目</el-button>-->
-    <!--</el-form-item>-->
-    <!--</el-form>-->
-    <!--<hr/>-->
-    <!--<el-table :data="dataList" ref="selection" class="tabClass"  border-->
-    <!--size="small">-->
-    <!--<el-table-column prop="name" label="名称"></el-table-column>-->
-    <!--<el-table-column prop="author" label="作者"></el-table-column>-->
-    <!--<el-table-column prop="date" label="时间"></el-table-column>-->
-    <!--<el-table-column prop="base_package" label="包名"></el-table-column>-->
-    <!--<el-table-column prop="remark" label="描述"></el-table-column>-->
-    <!--<el-table-column   label="操作">-->
-    <!--<template slot-scope="props">-->
-    <!--<el-button type="text" size="small">删除</el-button>-->
-    <!--<el-button type="text" size="small">生成</el-button>-->
-    <!--<el-button type="text" size="small">编辑</el-button>-->
-    <!--</template>-->
-    <!--</el-table-column>-->
-    <!--</el-table>-->
-    <!--<ProjectDialog ref="dialog"></ProjectDialog>-->
-    <!--</div>-->
     <div>
         <el-row :gutter="20">
             <el-col :span="6">
@@ -161,7 +132,7 @@
     </div>
 </template>
 <script>
-    import ProjectDialog from './ProjectDialog.vue';
+    import ProjectDialog from './EntityDialog.vue';
     export default{
         components: {ProjectDialog},
         data: function () {
@@ -179,7 +150,7 @@
                     author: '',
                     date: null, //创建日期
                     entitys: [], //实体类列表
-                    remark: [] //备注
+                    remark: '' //备注
                 },
                 rules: {
                     name: [
