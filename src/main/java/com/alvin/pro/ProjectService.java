@@ -45,30 +45,6 @@ public class ProjectService {
 		}
 	}
 
-//	/**
-//	 * 添加实体类
-//	 *
-//	 * @param entityConfig
-//	 * @return
-//	 */
-//	public int addEntity(EntityConfig entityConfig) {
-//		File file = new File(projectDataDir, entityConfig.getProjectName().concat(".json"));
-//		try {
-//			ProjectConfig config = JSONObject.parseObject(Files.readAllBytes(Paths.get(file.toURI())), ProjectConfig.class);
-//			entityConfig.setProjectName(null);
-//			int index = config.getEntitys().indexOf(entityConfig);
-//			if (index == -1) {
-//				config.getEntitys().add(entityConfig);
-//			} else {
-//				config.getEntitys().set(index, entityConfig);
-//			}
-//			return save(config);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//			return 0;
-//		}
-//	}
-
 	/**
 	 * 生成项目
 	 *
@@ -131,21 +107,20 @@ public class ProjectService {
 
 	private void genCode(ProjectConfig projectConfig, File sourceDir, File outFileDir) throws IOException {
 		List<File> vms = Lists.newArrayList(new File(sourceDir, "entity").listFiles());
-		for (EntityConfig table : projectConfig.getEntitys()) {
-			String auth = table.getAuthor();// 作者
-			if (Strings.isNullOrEmpty(auth)) {
-				auth = projectConfig.getAuthor();
-			}
-
+		for (EntityConfig table : projectConfig.getEntitys().stream().filter(item -> item.getType() == 0).collect(Collectors.toList())) {
 			List<Field> fList = table.getFields().stream().map(item -> {
 				Field field = new Field();
 				field.setBigName(Utils.firstUpper(item.getName()));
 				field.setComment(item.getRemark());
-				field.setName(item.getCol_name());
+				field.setName(item.getName());
 				if (item.getType().equals("ref")) {
 					//找到原来的对象，然后找到对象的主键的类型
-					String fkType = findFkType(item.getRef_name(), projectConfig);
-					field.setType(fkType);
+					EntityConfig refEntity = projectConfig.getEntitys().stream().filter(eitem -> eitem.getName().equals(item.getRef_name())).findFirst().get();
+					if (refEntity.getType().intValue() == 0) {
+						field.setType(refEntity.getFields().stream().filter(fitem -> refEntity.getIdName().equals(fitem.getName())).findFirst().get().getType());
+					} else {
+						field.setType("java.lang.String");
+					}
 				} else {
 					field.setType(item.getType());
 				}
@@ -163,18 +138,18 @@ public class ProjectService {
 			//组装对象
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("fList", fList);
-			jsonObject.put("auth", auth);
+			jsonObject.put("auth", projectConfig.getAuthor());
 			jsonObject.put("cName", cName);
 			jsonObject.put("lowUpp", lowUpp);
 			jsonObject.put("idType", idField.getType());
-			jsonObject.put("table", table.getTable_name());
+			jsonObject.put("table", table);
 			jsonObject.put("id", idField);
-			jsonObject.put("tName", table.getTable_name());
+			jsonObject.put("tName", table.getName());
 			jsonObject.put("idName", idField.getName());
+			jsonObject.put("time", projectConfig.getDate());
 			//类名称
 			jsonObject.put("upp", upp);
 			jsonObject.put("clsUpp", upp);
-			jsonObject.put("time", table.getDate());
 			//各种参数追加
 			jsonObject.put("selectFields", Utils.add(fList, "t.", ",", false, "select"));
 			jsonObject.put("insertFields", Utils.add(fList, "", ",", true, "insert"));
@@ -186,6 +161,15 @@ public class ProjectService {
 			jsonObject.put("updateParams", Utils.add(fList, "vo.get", "(),", true) + ",vo.get" + Utils.firstUpper(idName) + "()");
 			jsonObject.put("selectItems", Utils.add(fList, "t.", ","));
 
+			StringBuilder sb = new StringBuilder();
+			table.getFields().stream().filter(item -> item.getType() == "ref").forEach(item -> {
+				EntityConfig refEntity = projectConfig.getEntitys().stream().filter(eitem -> eitem.getName().equals(item.getRef_name())).findFirst().get();
+				if (refEntity.getType() == 0) {
+					sb.append(" left join " + refEntity.getName() + " as " + refEntity.getName().toLowerCase() + " on " + refEntity.getName().toLowerCase() + "." + refEntity.getIdName() + " = t." + table.getIdName() + " ");
+				}
+			});
+
+			jsonObject.put("joinTables", sb.toString());
 			//其他附属数据
 			List<String> importList = Lists.newArrayList();
 			importList.add(Utils.dateImport(fList));
@@ -197,6 +181,7 @@ public class ProjectService {
 			parseVmTemplate(vms, projectConfig, jsonObject, upp, low, outFileDir);
 		}
 	}
+
 
 	/**
 	 * 只生成java 类，目前

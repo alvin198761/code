@@ -34,8 +34,9 @@ public class ProjectAction {
 	}
 
 	@RequestMapping("genProject")
-	public String genProject(@RequestParam("projectName") String projectName) throws IOException {
-		return this.projectService.genProject(projectName);
+	public String genProject(@RequestBody ProjectConfig projectConfig) throws IOException {
+		save(projectConfig);//先保存
+		return this.projectService.genProject(projectConfig.getName());
 	}
 
 	@RequestMapping("genEntity")
@@ -77,16 +78,12 @@ public class ProjectAction {
 		EntityConfig entityConfig = new EntityConfig();
 		Date date = new Date();
 		String dateText = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
-		entityConfig.setDate(dateText);
-		entityConfig.setAuthor("alvin");
 		entityConfig.setIdName("uid");
 		entityConfig.setLabalName("name");
-		entityConfig.setTable_name("test_user");
 		entityConfig.setName("UserBean");
 		entityConfig.setFields(Lists.newArrayList());
 
 		FieldConfig fieldConfig = new FieldConfig();
-		fieldConfig.setCol_name("id");
 		fieldConfig.setIsNull("not null");
 		fieldConfig.setLength(11);
 		fieldConfig.setName("uid");
@@ -96,7 +93,6 @@ public class ProjectAction {
 		entityConfig.getFields().add(fieldConfig);
 
 		fieldConfig = new FieldConfig();
-		fieldConfig.setCol_name("name");
 		fieldConfig.setIsNull("null");
 		fieldConfig.setLength(50);
 		fieldConfig.setName("uname");
@@ -106,7 +102,6 @@ public class ProjectAction {
 		entityConfig.getFields().add(fieldConfig);
 
 		fieldConfig = new FieldConfig();
-		fieldConfig.setCol_name("test");
 		fieldConfig.setIsNull("null");
 		fieldConfig.setLength(50);
 		fieldConfig.setName("test");
@@ -116,7 +111,6 @@ public class ProjectAction {
 		entityConfig.getFields().add(fieldConfig);
 
 		fieldConfig = new FieldConfig();
-		fieldConfig.setCol_name("time");
 		fieldConfig.setIsNull("null");
 		fieldConfig.setLength(50);
 		fieldConfig.setName("time");
@@ -129,7 +123,7 @@ public class ProjectAction {
 
 		this.save(projectConfig);
 		try {
-			this.genProject(projectConfig.getName());
+			this.genProject(projectConfig);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

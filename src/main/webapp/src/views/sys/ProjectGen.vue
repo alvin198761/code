@@ -120,7 +120,7 @@
         },
         methods: {
             refresh(){
-                this.form = {entitys: [{}]};
+                this.form = {entitys: [{type:0}]};
                 const that = this;
                 that.loading = true;
                 this.$http.post("/api/project/list", JSON.stringify({})).then(res => {
@@ -148,14 +148,36 @@
                     that.loading = false;
                 })
             },
-            onSubmit(){
-
-            },
             clickNode(data){
-                this.form = {...data};
+                this.form = data;
             },
             save(project){
                 const that = this;
+                for(let i = 0 ; i < project.entitys.length ;i++){
+                    let entity = project.entitys[i];
+                    if(entity.type == null){
+                        this.$message.error("实体类型不能为空");
+                        return ;
+                    }
+                    if(entity.name == null || entity.name.length == 0){
+                        this.$message.error("实体名称不能为空");
+                        return ;
+                    }
+                    for(let j = 0 ; j < project.entitys.length;j++){
+                        if(j == i){
+                            continue;
+                        }
+                        let centity = project.entitys[j];
+                        if(centity.name == entity.name){
+                            this.$message.error("实体名称不能重复");
+                            return ;
+                        }
+                    }
+                    if(entity.remark == null || entity.remark.length == 0){
+                        this.$message.error("实体注释不能为空");
+                        return ;
+                    }
+                }
                 that.$http.post("/api/project/save", JSON.stringify(project)).then(res => {
                     this.$message.success("保存成功");
                 }).catch(res => {
@@ -163,7 +185,12 @@
                 });
             },
             genproject(project){
-
+                const  that = this;
+                that.$http.post("/api/project/genProject",JSON.stringify(project)).then(res =>{
+                    this.$message.success("生成项目成功");
+                }).catch(err =>{
+                    this.$message.error("生成项目出错");
+                });
             },
             deleteProject(project){
                 const that = this;
@@ -173,9 +200,8 @@
                     cancelButtonText: '放弃'
                 })
                     .then(() => {
-                        that.$http.post("/api/project/delete", JSON.stringify({
-                            project
-                        })).then(res => {
+                        console.log(project)
+                        that.$http.post("/api/project/delete", JSON.stringify(project)).then(res => {
                             if (project == that.form) {
                                 that.form = {};
                             }
@@ -189,7 +215,7 @@
                     });
             },
             newProject(){
-                this.form = {name: 'test', entitys: [{}]}
+                this.form = {name: 'test', entitys: [{ type: 0}]}
                 this.dataList.push(this.form);
             }
         }

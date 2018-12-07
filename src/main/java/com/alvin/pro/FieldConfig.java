@@ -17,8 +17,6 @@ public class FieldConfig {
 	private String type;
 	//引用类型对应的实体
 	private String ref_name;
-	//列名称
-	private String col_name;
 	//列备注
 	private String remark;
 	//数据长度

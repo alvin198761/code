@@ -15,19 +15,21 @@
             </el-table-column>
             <el-table-column prop="type" label="类型" width="150">
                 <template slot-scope="props">
-                    <el-select size="small" v-model="props.row.type" placeholder="请选择类型">
+                    <el-select size="small" v-model="props.row.type" placeholder="请选择类型"
+                               @change="(val) =>  changeType(val,props.row)">
                         <el-option
                                 v-for="item in types"
                                 :key="item.value"
                                 :label="item.label"
-                                :value="item.value">
+                                :value="item">
                         </el-option>
                     </el-select>
                 </template>
             </el-table-column>
             <el-table-column prop="ref_name" label="引用类" width="150">
                 <template slot-scope="props">
-                    <el-select v-model="props.row.ref_name" :disabled="props.row.type != 'ref'" placeholder="请选择类型引用类">
+                    <el-select v-model="props.row.ref_name" :disabled="props.row.type != 'ref'"
+                               @change="(val) => changeRefName(val,props.row)" placeholder="请选择类型引用类">
                         <el-option size="small"
                                    v-for="item in project.entitys"
                                    :key="item.name"
@@ -41,7 +43,8 @@
             <el-table-column prop="length" label="长度" width="200">
                 <template slot-scope="props">
                     <el-input-number v-model="props.row.length" :disabled="props.row.type != 'java.lang.String'"
-                                     :min="0" :max="999999" size="small"></el-input-number>
+                                     :min="0" :max="999999" size="small"
+                                     @change="(val) => changeLength(val,props.row)"></el-input-number>
                 </template>
             </el-table-column>
             <el-table-column prop="remark" label="注释">
@@ -146,8 +149,8 @@
                         db_type: 'FLOAT',
                     },
                     {
-                        value: 'java.lang.Date',
-                        label: 'java.lang.Date',
+                        value: 'java.util.Date',
+                        label: 'java.util.Date',
                         db_type: 'DATETIME',
                     },
                     {
@@ -198,6 +201,39 @@
             },
             saveEntity(){
                 const that = this;
+                for(let i = 0 ; i < this.entity.fields.length ;i++ ){
+                    let fi =  this.entity.fields[i];
+                    if(fi.name == null ||fi.name.length == 0){
+                        this.$message.error("属性名不能为空")
+                        return ;
+                    }
+                    for(let j = 0 ; j <  this.entity.fields.length ;j++){
+                        if(j == i){
+                            continue;
+                        }
+                        let cfi =  this.entity.fields[j];
+                        if(cfi.name == fi.name){
+                            this.$message.error("属性名不能重名")
+                            return ;
+                        }
+                    }
+                    if(fi.type == null){
+                        this.$message.error("属性类型不能为空")
+                        return ;
+                    }
+                    if(fi.type == "java.lang.String" && fi.length == null){
+                        this.$message.error("属性长度不能为空")
+                        return ;
+                    }
+                    if(fi.type == "ref" && fi.ref_name == null){
+                        this.$message.error("引用类不能为空")
+                        return ;
+                    }
+                    if(fi.remark == null ||fi.remark.length == 0){
+                        this.$message.error("注释不能为空")
+                        return ;
+                    }
+                }
                 this.entity.fields = this.entity.fields.map(field => {
                     field.isNull = field.isNullChecked ? "NULL" : "NOT NULL";
                     if (field.isPrimaryKeyChecked == true) {
@@ -217,6 +253,29 @@
                 }
                 this.saveProject(this.project);
                 this.show = false;
+            },
+            changeType(type, row){
+                if (type.value == 'java.lang.String') {
+                    if (row.length == null) {
+                        row.length = 50;
+                    }
+                    row.sql_type = type.db_type + "(" + row.length + ")"
+                } else {
+                    row.sql_type = type.db_type
+                }
+                row.type = type.value;
+            },
+            changeRefName(ref, row){
+                if (ref.type == 1) {
+                    row.sql_type = "VARCHAR(100)";
+                } else {
+                    row.sql_type = "BIGINT(11)";
+                }
+            },
+            changeLength(len, row){
+                if (row.value == 'java.lang.String') {
+                    row.sql_type = "VARCHAR(" + len + ")"
+                }
             }
         },
 

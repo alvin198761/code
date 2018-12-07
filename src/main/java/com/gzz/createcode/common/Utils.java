@@ -35,11 +35,10 @@ public class Utils {
 	}
 
 	/**
-	 * @param list字段列表
-	 * @param prefix前缀
-	 * @param suffix后缀
-	 * @param noId不包括主键
-	 * @param isUp首字母大写
+	 * @param list 字段列表
+	 * @param prefix 前缀
+	 * @param suffix 后缀
+	 * @param noId 不包括主键
 	 */
 	public static StringBuilder add(List<Field> list, String prefix, String suffix, boolean noId, String wrap) {
 		StringBuilder sb = new StringBuilder();

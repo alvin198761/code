@@ -131,7 +131,7 @@ public class ${clsUpp}Dao extends BaseDao{
     */
     @Override
     protected String joinTables() {
-     return super.joinTables();
+     return "${joinTables}";
     }
 
     /**
