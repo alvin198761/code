@@ -12,6 +12,7 @@ import java.util.Objects;
 @Data
 public class EntityConfig {
 
+	private Byte type =0;//0是实体类，1是常量字典
 	//类名
 	private String name;
 	//id 属性名称

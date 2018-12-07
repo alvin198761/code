@@ -2,26 +2,43 @@
     <div>
         <el-row :gutter="20">
             <el-col :span="6">
-                <el-input size="small"
-                          placeholder="输入关键字进行过滤"
-                          v-model="projectName">
-                </el-input>
-
-                <el-row style="margin-top: 10px" :gutter="20">
-                    <el-col :span="12">
-                        <el-button type="primary" style="width: 100%" @click="refresh" size="small">刷新</el-button>
-                    </el-col>
-                    <el-col :span="12">
-                        <el-button size="small" style="width: 100%" @click="form ={ entitys:[{}]}">新增项目</el-button>
-                    </el-col>
-                </el-row>
-                <el-card style="margin-top: 10px;">
+                <el-card>
+                    <div slot="header">
+                        <span>项目列表</span>
+                        <el-button style="float: right;  margin-right: 5px; " icon="el-icon-refresh" @click="refresh"
+                                   size="small" title="刷新"></el-button>
+                        <el-button style="float: right; margin-right: 5px; " icon="el-icon-plus" size="small"
+                                   type="primary" title="新增项目" @click="newProject"></el-button>
+                    </div>
                     <el-tree
                             :data="dataList"
                             :props="defaultProps"
                             default-expand-all
                             @node-click="clickNode"
                             ref="projectTree">
+                        <el-row slot-scope="{ node, data }" style="width: 100%">
+                            <el-col :span="18">{{ node.label }}</el-col>
+                            <el-col :span="6">
+                                <el-button
+                                        type="text"
+                                        size="mini"
+                                        @click="() => save(data)">
+                                    保存
+                                </el-button>
+                                <el-button
+                                        type="text"
+                                        size="mini"
+                                        @click="() => genproject(data)">
+                                    生成
+                                </el-button>
+                                <el-button
+                                        type="text"
+                                        size="mini"
+                                        @click="() => deleteProject(data)">
+                                    删除
+                                </el-button>
+                            </el-col>
+                        </el-row>
                     </el-tree>
                 </el-card>
             </el-col>
@@ -30,13 +47,13 @@
                     <el-row>
                         <el-col :span="8">
                             <el-form-item label="项目名称" prop="name">
-                                <el-input v-model="form.name" placeholder="请输入项目名称" size="small"
+                                <el-input v-model="form.name" placeholder="只能字母数字下划线" size="small"
                                           autocomplete="off"></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="8">
                             <el-form-item label="项目包名" prop="base_package">
-                                <el-input v-model="form.base_package" placeholder="请输入项目包名" size="small"
+                                <el-input v-model="form.base_package" placeholder="必须小写，如： org.alvin.test" size="small"
                                           autocomplete="off"></el-input>
                             </el-form-item>
                         </el-col>
@@ -50,96 +67,23 @@
                     <el-row :gutter="20">
                         <el-col>
                             <el-form-item label="项目描述" prop="remark">
-                                <el-input v-model="form.remark" placeholder="请输入项目作者" type="textarea" size="small"
+                                <el-input v-model="form.remark" placeholder="请输入项目描述" type="textarea" size="small"
                                           autocomplete="off"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>
-                    <el-row>
-                        <el-col>
-                            <el-form-item label="实体类" prop="entitys">
-                                <el-table :data="form.entitys" border
-                                          size="small">
-                                    <el-table-column type="expand">
-                                        <template slot-scope="props">
-                                            <el-table :data="props.row.fields">
-                                                <el-table-column prop="name" label="属性名"></el-table-column>
-                                                <el-table-column prop="type" label="类型" width="150"></el-table-column>
-                                                <el-table-column prop="ref_name" label="引用类"
-                                                                 width="150"></el-table-column>
-                                                <el-table-column prop="length" label="长度" width="150"></el-table-column>
-                                                <el-table-column prop="remark" label="注释"></el-table-column>
-                                                <el-table-column prop="isNull" label="为空" width="100">
-                                                    <template slot-scope="fprops">
-                                                        {{fprops.row.isNull == 'NULL'? '空':'非空'}}
-                                                    </template>
-                                                </el-table-column>
-                                                <el-table-column label="主键" width="50">
-                                                    <template slot-scope="fprops">
-                                                        {{props.row.idName == fprops.row.name ? '是' :''}}
-                                                    </template>
-                                                </el-table-column>
-                                                <el-table-column label="标签" width="50">
-                                                    <template slot-scope="fprops">
-                                                        {{props.row.labelName == fprops.row.name ? '是' :''}}
-                                                    </template>
-                                                </el-table-column>
-                                            </el-table>
-                                        </template>
-                                    </el-table-column>
-                                    <el-table-column prop="name" label="类名" width="150">
-                                        <template slot-scope="props">
-                                            <el-input v-model="props.row.name" size="small"></el-input>
-                                        </template>
-                                    </el-table-column>
-                                    <el-table-column prop="table_name" label="表名" width="150">
-                                        <template slot-scope="props">
-                                            <el-input v-model="props.row.table_name" size="small"></el-input>
-                                        </template>
-                                    </el-table-column>
-                                    <el-table-column prop="author" label="作者" width="150">
-                                        <template slot-scope="props">
-                                            <el-input v-model="props.row.author" size="small"></el-input>
-                                        </template>
-                                    </el-table-column>
-                                    <el-table-column prop="date" label="时间" width="200">
-                                        <template slot-scope="props">
-                                            <el-input v-model="props.row.date" size="small"></el-input>
-                                        </template>
-                                    </el-table-column>
-                                    <el-table-column prop="remark" label="注释">
-                                        <template slot-scope="props">
-                                            <el-input v-model="props.row.remark" size="small"></el-input>
-                                        </template>
-                                    </el-table-column>
-                                    <el-table-column label="操作">
-                                        <template slot-scope="props">
-                                            <el-button type="text" size="small" @click="editDialog(props.row)">编辑属性
-                                            </el-button>
-                                            <el-button type="text" size="small"
-                                                       @click="removeArray(form.entitys,props.row)">删除
-                                            </el-button>
-                                            <el-button type="text" size="small" @click="form.entitys.push({})">追加
-                                            </el-button>
-                                        </template>
-                                    </el-table-column>
-                                </el-table>
-                            </el-form-item>
-                        </el-col>
-                    </el-row>
-                    <el-form-item label="操作">
-                        <el-button type="primary" @click="save">保存</el-button>
-                    </el-form-item>
+
+                    <EntityList :form="form" :save="save"></EntityList>
                 </el-form>
             </el-col>
         </el-row>
-        <ProjectDialog ref="dialog" :saveProject="save"></ProjectDialog>
     </div>
 </template>
 <script>
-    import ProjectDialog from './EntityDialog.vue';
+
+    import EntityList from './EntityList.vue';
     export default{
-        components: {ProjectDialog},
+        components: {EntityList},
         data: function () {
             return {
                 dataList: [],
@@ -176,13 +120,19 @@
         },
         methods: {
             refresh(){
-                this.form ={ entitys:[{}]};
+                this.form = {entitys: [{}]};
                 const that = this;
                 that.loading = true;
                 this.$http.post("/api/project/list", JSON.stringify({})).then(res => {
-                    that.dataList = res.data.map(pro =>{
-                        pro.entitys = pro.entitys.map(entity =>{
-                            entity.fields = entity.fields.map(field =>{
+                    that.dataList = res.data.map(pro => {
+                        if (pro.entitys == null || pro.entitys.length == 0) {
+                            pro.entitys = [{}];
+                        }
+                        pro.entitys = pro.entitys.map(entity => {
+                            if (entity.fields == null || entity.fields.length == 0) {
+                                entity.fields = [{}];
+                            }
+                            entity.fields = entity.fields.map(field => {
                                 field.isNullChecked = field.isNull == 'NULL'
                                 field.isPrimaryKeyChecked = entity.idName == field.name;
                                 field.isLabelChecked = entity.labalName == field.name;
@@ -194,47 +144,53 @@
                     });
                     that.loading = false;
                 }).catch(res => {
-                    that.$message.error("获取项目列表失败")
+                    that.$message.error("获取项目列表失败：" + res)
                     that.loading = false;
                 })
             },
             onSubmit(){
 
             },
-            editDialog(row){
-                this.$refs["dialog"].editDialog(this.form, row);
-            },
             clickNode(data){
                 this.form = {...data};
             },
-            removeArray (_arr, _obj) {
-                var length = _arr.length;
-                for (var i = 0; i < length; i++) {
-                    if (_arr[i] == _obj) {
-                        if (i == 0) {
-                            _arr.shift(); //删除并返回数组的第一个元素
-                            break;
-                        }
-                        else if (i == length - 1) {
-                            _arr.pop();  //删除并返回数组的最后一个元素
-                            break;
-                        }
-                        else {
-                            _arr.splice(i, 1); //删除下标为i的元素
-                            break;
-                        }
-                    }
-                }
-                if (_arr.length == 0) {
-                    _arr.push({});
-                }
-            },
-            save(){
+            save(project){
                 const that = this;
-                that.$http.post("/api/project/save", JSON.stringify(this.form)).then(res => {
+                that.$http.post("/api/project/save", JSON.stringify(project)).then(res => {
+                    this.$message.success("保存成功");
                 }).catch(res => {
                     this.$message.error("保存出错");
                 });
+            },
+            genproject(project){
+
+            },
+            deleteProject(project){
+                const that = this;
+                this.$confirm('项目将彻底删除，你确认吗？', '确认信息', {
+                    distinguishCancelAndClose: true,
+                    confirmButtonText: '确认',
+                    cancelButtonText: '放弃'
+                })
+                    .then(() => {
+                        that.$http.post("/api/project/delete", JSON.stringify({
+                            project
+                        })).then(res => {
+                            if (project == that.form) {
+                                that.form = {};
+                            }
+                            that.dataList.splice(that.dataList.indexOf(project), 1)
+                        }).catch(err => {
+                            this.$message.error("删除项目出错");
+                        });
+                    })
+                    .catch(action => {
+
+                    });
+            },
+            newProject(){
+                this.form = {name: 'test', entitys: [{}]}
+                this.dataList.push(this.form);
             }
         }
     }

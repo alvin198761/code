@@ -28,10 +28,10 @@ public class ProjectAction {
 		return this.projectService.save(projectConfig);
 	}
 
-//	@PostMapping("addEntity")
-//	public int addEntity(@RequestBody EntityConfig entityConfig) {
-//		return this.projectService.addEntity(entityConfig);
-//	}
+	@PostMapping("delete")
+	public int delete(@RequestBody ProjectConfig projectConfig) {
+		return this.projectService.deleteProject(projectConfig.getName());
+	}
 
 	@RequestMapping("genProject")
 	public String genProject(@RequestParam("projectName") String projectName) throws IOException {
@@ -44,7 +44,7 @@ public class ProjectAction {
 	}
 
 	@GetMapping("types")
-	public List<TypeBean> getTypes(){
+	public List<TypeBean> getTypes() {
 		return this.projectService.getTypes();
 	}
 
@@ -62,12 +62,12 @@ public class ProjectAction {
 	}
 
 	@RequestMapping("list")
-	public List<ProjectConfig> list(){
+	public List<ProjectConfig> list() {
 		return this.projectService.getProjects();
 	}
 
 	@GetMapping("test")
-	public void test(){
+	public void test() {
 		ProjectConfig projectConfig = new ProjectConfig();
 		projectConfig.setAuthor("alvin - 111");
 		projectConfig.setName("test");

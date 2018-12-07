@@ -2,7 +2,7 @@
     <el-dialog title="字段编辑" :visible.sync="show" width="80%">
         <el-row>
             <el-col :span="6">类名:<b>{{entity.name}}</b></el-col>
-            <el-col :span="6">作者:<b>{{entity.author}}</b></el-col>
+            <el-col :span="6">&nbsp;</el-col>
             <el-col :span="6">注释:<b>{{entity.remark}}</b></el-col>
             <el-col :span="6">&nbsp;</el-col>
         </el-row>
@@ -33,6 +33,7 @@
                                    :key="item.name"
                                    :label="item.name"
                                    :value="item.name">
+                            <span style="float: left">{{ item.name }}({{item.type == 0 ? '实体类' : '字典常量'}})</span>
                         </el-option>
                     </el-select>
                 </template>
@@ -77,6 +78,7 @@
     </el-dialog>
 </template>
 <script>
+    import {remove} from '../../utils/ArraysUtils';
 
     export default{
         props: ["saveProject"],
@@ -189,23 +191,7 @@
                 this.show = true;
             },
             removeArray (_arr, _obj) {
-                var length = _arr.length;
-                for (var i = 0; i < length; i++) {
-                    if (_arr[i] == _obj) {
-                        if (i == 0) {
-                            _arr.shift(); //删除并返回数组的第一个元素
-                            break;
-                        }
-                        else if (i == length - 1) {
-                            _arr.pop();  //删除并返回数组的最后一个元素
-                            break;
-                        }
-                        else {
-                            _arr.splice(i, 1); //删除下标为i的元素
-                            break;
-                        }
-                    }
-                }
+                remove(_arr, _obj);
                 if (_arr.length == 0) {
                     _arr.push({});
                 }
@@ -229,7 +215,7 @@
                         break;
                     }
                 }
-                this.saveProject();
+                this.saveProject(this.project);
                 this.show = false;
             }
         },
