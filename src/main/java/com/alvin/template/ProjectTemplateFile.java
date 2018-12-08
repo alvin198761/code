@@ -1,0 +1,20 @@
+package com.alvin.template;
+
+import lombok.Data;
+
+/**
+ * 模板文件
+ */
+@Data
+public class ProjectTemplateFile {
+	//文件名称
+	private String name;
+	//文件类型 1 普通模板 2 实体模板 3 非模板 4 目录
+	private Short type;
+	//相对项目模板文件夹的位置，相对路径
+	private String path;
+	//项目名称
+	private String templateName;
+	//内容
+	private String content;
+}

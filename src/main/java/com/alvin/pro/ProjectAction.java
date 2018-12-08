@@ -40,7 +40,7 @@ public class ProjectAction {
 	}
 
 	@RequestMapping("genEntity")
-	public String genEntity(@RequestParam("projectName") String projectName, @RequestParam("entityName[]") String entityName) {
+	public String genEntity(@RequestParam("templateName") String projectName, @RequestParam("entityName[]") String entityName) {
 		return this.projectService.genEntity(projectName, entityName);
 	}
 

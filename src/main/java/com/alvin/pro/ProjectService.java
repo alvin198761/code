@@ -108,7 +108,7 @@ public class ProjectService {
 	private void genCode(ProjectConfig projectConfig, File sourceDir, File outFileDir) throws IOException {
 		List<File> vms = Lists.newArrayList(new File(sourceDir, "entity").listFiles());
 		for (EntityConfig table : projectConfig.getEntitys().stream().filter(item -> item.getType() == 0).collect(Collectors.toList())) {
-			List<Field> fList = table.getFields().stream().map(item -> {
+			List<Field> fList = table.getFields().stream().filter(item -> item.getName() != null).map(item -> {
 				Field field = new Field();
 				field.setBigName(Utils.firstUpper(item.getName()));
 				field.setComment(item.getRemark());

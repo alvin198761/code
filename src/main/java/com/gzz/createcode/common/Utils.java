@@ -44,6 +44,7 @@ public class Utils {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < list.size(); i++) {
 			Field field = list.get(i);
+			//TODO 这个代码是坑
 			sb.append((i != 0 && i % 10 == 0) ? "\"); \r\n\t\t".concat(wrap).concat(".append(\"") : "");
 			sb.append(prefix.concat(field.getName()).concat(suffix));
 		}

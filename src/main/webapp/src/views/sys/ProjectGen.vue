@@ -88,7 +88,7 @@
             return {
                 dataList: [],
                 loading: false,
-                projectName: '',
+                templateName: '',
                 defaultProps: {
                     children: 'children',
                     label: 'name'

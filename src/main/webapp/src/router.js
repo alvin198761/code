@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import CodeGen from './views/sys/CodeGen.vue';
 import SawggerClientGen from './views/sys/SawggerClientGen.vue';
 import ProjectGen from './views/sys/ProjectGen.vue';
+import TemplateList from './views/sys/TemplateList.vue';
 
 Vue.use(Router)
 
@@ -23,7 +24,10 @@ export default new Router({
                     path: 'swagger', component: SawggerClientGen, name: 'Swagger 客户端'
                 },
                 {
-                    path: 'project', component: ProjectGen, name: 'java 项目'
+                    path: 'project', component: ProjectGen, name: '项目设计'
+                },
+                {
+                    path: 'template', component: TemplateList, name: '模板设计'
                 }
             ]
         }

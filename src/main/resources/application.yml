@@ -22,3 +22,4 @@ gen:
   project:
     outdir: D:/pro_dir
     datadir: D:/pro_data
+    templatedir: D:/pro_temp_data

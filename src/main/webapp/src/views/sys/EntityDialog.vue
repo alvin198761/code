@@ -201,6 +201,10 @@
             },
             saveEntity(){
                 const that = this;
+                if(this.entity.fields.length <= 1){
+                    this.$message.error("实体类不能只有一个字段")
+                    return ;
+                }
                 for(let i = 0 ; i < this.entity.fields.length ;i++ ){
                     let fi =  this.entity.fields[i];
                     if(fi.name == null ||fi.name.length == 0){
@@ -234,16 +238,30 @@
                         return ;
                     }
                 }
+                let idField = null;
                 this.entity.fields = this.entity.fields.map(field => {
                     field.isNull = field.isNullChecked ? "NULL" : "NOT NULL";
                     if (field.isPrimaryKeyChecked == true) {
                         that.entity.idName = field.name;
+                       idField = field;
                     }
                     if (field.isLabelChecked == true) {
                         that.entity.labalName = field.name;
                     }
                     return field;
                 });
+                if(this.entity.idName == null){
+                    this.$message.error("主键必须不能为空")
+                    return ;
+                }
+                if(idField.type != "java.lang.Long" && idField.type != 'java.lang.Integer'){
+                    this.$message.error("主键只能选 java.lang.Long ,java.lang.Integer 类型" )
+                    return ;
+                }
+                if(this.entity.labalName == null){
+                    this.$message.error("标签不能为空")
+                    return ;
+                }
                 for (let i = 0; i < this.project.entitys.length; i++) {
                     let entity = this.project.entitys[i];
                     if (entity.name == this.entity.name) {

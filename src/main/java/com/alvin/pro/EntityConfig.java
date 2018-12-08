@@ -25,7 +25,7 @@ public class EntityConfig {
 	private List<FieldConfig> fields;
 
 	//-----------
-//	private String projectName; //添加类时候用
+//	private String templateName; //添加类时候用
 
 	@Override
 	public boolean equals(Object o) {
