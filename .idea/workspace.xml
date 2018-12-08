@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4939a8-64de-4469-a95f-b6809427fa35" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/UnZipFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/EntityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/EntityDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/views/sys/EntityDialog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/CodeGen.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/EntityDialog.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/EntityList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/ProjectGen.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/SawggerClientGen.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/views/sys/TemplateList.vue" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +26,8 @@
       <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="135">
+              <caret line="96" column="99" lean-forward="true" selection-start-line="96" selection-start-column="99" selection-end-line="96" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,8 +38,8 @@
       <file leaf-file-name="ProjectTemplateConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
+            <state relative-caret-position="361">
+              <caret line="22" column="51" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectTemplateFile.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProjectTemplateFile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="399">
+              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -66,8 +59,8 @@
       <file leaf-file-name="ProjectTemplateAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state relative-caret-position="349">
+              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#458#459#0" expanded="true" />
@@ -79,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectTemplateService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProjectTemplateService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            <state relative-caret-position="666">
+              <caret line="152" selection-start-line="152" selection-end-line="152" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/UnZipFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -237,13 +230,13 @@
         <option value="$PROJECT_DIR$/project_templates/sql/mysql.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gzz/createcode/common/Utils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateAction.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateFile.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/UnZipFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateFile.java" />
       </list>
     </option>
   </component>
@@ -660,12 +653,12 @@
       <workItem from="1544070228875" duration="704000" />
       <workItem from="1544091438620" duration="2590000" />
       <workItem from="1544144738376" duration="9537000" />
-      <workItem from="1544231654351" duration="7334000" />
+      <workItem from="1544231654351" duration="13806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131245000" />
+    <option name="totallyTimeSpent" value="137717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -681,7 +674,7 @@
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.37840787" />
+      <window_info anchor="bottom" id="Debug" order="9" visible="true" weight="0.37840787" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.22682661" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -713,7 +706,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="40" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -980,51 +973,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="24" column="15" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1048,17 +1000,58 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/mock/utils/UnZipFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/pro/ProjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="96" column="99" lean-forward="true" selection-start-line="96" selection-start-column="99" selection-end-line="96" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        <state relative-caret-position="666">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="22" column="51" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alvin/template/ProjectTemplateFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
         </state>
       </provider>
     </entry>

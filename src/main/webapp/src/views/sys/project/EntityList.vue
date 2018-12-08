@@ -38,7 +38,7 @@
 </template>
 <script>
     import ProjectDialog from './EntityDialog.vue';
-    import {remove} from '../../utils/ArraysUtils';
+    import {remove} from '../../../utils/ArraysUtils';
     export default{
         props: ["form", "save"],
         components: {ProjectDialog},

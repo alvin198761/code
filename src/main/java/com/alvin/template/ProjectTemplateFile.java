@@ -17,4 +17,8 @@ public class ProjectTemplateFile {
 	private String templateName;
 	//内容
 	private String content;
+	//父节点名称
+	private String pid;
+	//当前节点id
+	private String id;
 }

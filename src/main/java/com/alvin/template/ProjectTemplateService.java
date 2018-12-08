@@ -1,7 +1,7 @@
 package com.alvin.template;
 
 import com.alibaba.fastjson.JSONObject;
-import com.alvin.mock.utils.ZipUtils;
+import com.alvin.mock.utils.UnZipFile;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,11 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -30,10 +34,12 @@ public class ProjectTemplateService {
 	 * @return
 	 */
 	public int save(ProjectTemplateConfig templateConfig) {
+		templateConfig.setDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 		File templateDir = new File(this.templateDir, templateConfig.getName());
 		templateDir.mkdirs();
 		try {
-			Files.write(Paths.get(templateDir.getAbsolutePath(), templateConfig.getName()), JSONObject.toJSONBytes(templateConfig));
+			File configFile = new File(templateDir, "config.json");
+			Files.write(Paths.get(configFile.toURI()), JSONObject.toJSONBytes(templateConfig));
 			return 1;
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -47,8 +53,31 @@ public class ProjectTemplateService {
 	 * @param multipartFile
 	 * @return
 	 */
-	public int uploadTemplate(MultipartFile multipartFile) {
-//		ZipUtils.do
+	public int uploadTemplate(MultipartFile multipartFile) throws IOException {
+		String uuid = UUID.randomUUID().toString();
+		File file = new File(System.getProperty("java.io.tmpdir"), uuid);
+		Files.write(Paths.get(file.toURI()), multipartFile.getBytes());
+		File dist = new File(templateDir, uuid);
+		UnZipFile.unZipFiles(file, dist.getAbsolutePath());
+		LinkedList<File> files = new LinkedList<>();
+		files.addAll(Lists.newArrayList(dist.listFiles()));
+		ProjectTemplateConfig projectTemplateConfig = new ProjectTemplateConfig();
+		projectTemplateConfig.setName(uuid);
+		projectTemplateConfig.setDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+		while (!files.isEmpty()) {
+			File subFile = files.removeFirst();
+			ProjectTemplateFile templateFile = new ProjectTemplateFile();
+			templateFile.setName(subFile.getName());
+			if (subFile.isDirectory()) {
+				templateFile.setType((short) 4);
+			} else {
+				//一律按普通模板处理
+				templateFile.setType((short) 1);
+			}
+			templateFile.setPath(subFile.getAbsolutePath().substring(dist.getAbsolutePath().length() - 1));
+			projectTemplateConfig.getTemplateFiles().add(templateFile);
+		}
+		return save(projectTemplateConfig);
 	}
 
 

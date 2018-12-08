@@ -13,10 +13,6 @@ public class ProjectTemplateConfig {
 
 	//项目模板名称
 	private String name;
-	//后端源码根目录
-	private String back_src_dir;
-	//前端源码根目录
-	private String front_src_dir;
 	//作者
 	private String author;
 	//创建日期

@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import CodeGen from './views/sys/CodeGen.vue';
-import SawggerClientGen from './views/sys/SawggerClientGen.vue';
-import ProjectGen from './views/sys/ProjectGen.vue';
-import TemplateList from './views/sys/TemplateList.vue';
+import CodeGen from './views/sys/code/CodeGen.vue';
+import SawggerClientGen from './views/sys/swagger/SawggerClientGen.vue';
+import ProjectGen from './views/sys/project/ProjectGen.vue';
+import TemplateList from './views/sys/template/TemplateList.vue';
 
 Vue.use(Router)
 
