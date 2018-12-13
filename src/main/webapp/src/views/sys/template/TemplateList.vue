@@ -56,7 +56,7 @@
                                     <el-button
                                             type="text"
                                             size="mini"
-                                            @click="addFileDialog"
+                                            @click="() => addFileDialog(node, data)"
                                     >
                                        添加文件
                                     </el-button>
@@ -152,8 +152,12 @@
                     that.$message.error("保存失败:" + err);
                 });
             },
-            addFileDialog(){
-                this.$refs["fileDialog"].addDialog();
+            addFileDialog(node,data){
+                let path = data.path;
+                if(data.id == -1){
+                    path = '/';
+                }
+                this.$refs["fileDialog"].addDialog(data.id,path);
             }
         }
     }

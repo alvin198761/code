@@ -21,4 +21,7 @@ public class ProjectTemplateFile {
 	private String pid;
 	//当前节点id
 	private String id;
+
+	//内容获取类型 content 编辑，upload.上传，3，url 地址
+	private String contentType;
 }

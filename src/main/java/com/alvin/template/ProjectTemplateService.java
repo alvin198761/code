@@ -95,8 +95,8 @@ public class ProjectTemplateService {
 //		1 普通模板 2 实体模板 3 非模板 4 目录
 		File templateDir = new File(this.templateDir, file.getTemplateName());
 		if (file.getType() == 4) {
-			new File(templateDir, file.getPath()).mkdirs();
 			try {
+				Files.createDirectories(Paths.get(templateDir.getAbsolutePath(), file.getPath(), file.getName()));
 				ProjectTemplateConfig projectTemplateConfig = getTemplateByName(file.getTemplateName());
 				projectTemplateConfig.getTemplateFiles().add(file);
 				file.setTemplateName(null);
