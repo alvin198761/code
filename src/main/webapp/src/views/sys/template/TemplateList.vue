@@ -119,11 +119,12 @@
                 this.form = node;
                 this.projectTreeData =  [{
                     name: node.name,
-                    children: this.toTreeNode(node.templateFiles ,"-1"),
+                    templateName: node.name,
+                    children: this.toTreeNode(node.templateFiles ,"-1",node.name),
                     id: "-1"
                 }]
             },
-            toTreeNode(children,pid){
+            toTreeNode(children,pid,templateName){
                 const that = this;
                 return children.filter(item => {
                     if(item.pid == null && pid == null){
@@ -136,7 +137,8 @@
                 }).map(item =>{
                     return {
                         name :item.name,
-                        children: that.toTreeNode(children,item.id)
+                        children: that.toTreeNode(children,item.id,templateName),
+                        templateName: templateName,
                     }
                 });
             },
@@ -153,11 +155,7 @@
                 });
             },
             addFileDialog(node,data){
-                let path = data.path;
-                if(data.id == -1){
-                    path = '/';
-                }
-                this.$refs["fileDialog"].addDialog(data.id,path);
+                this.$refs["fileDialog"].addDialog(data);
             }
         }
     }

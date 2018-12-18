@@ -100,8 +100,12 @@
                     that.$Message.error({content: '添加失败'});
                 });
             },
-            addDialog(pid,path){
-                this.form = {...this.form, path: path, pid: pid}
+            addDialog(data){
+                let copyData = {...data};
+                if (copyData.id == -1) {
+                    copyData.path = '/';
+                }
+                this.form = {...this.form, pid: copyData.id, path: copyData.path, templateName: copyData.templateName}
                 this.show = true;
             },
             uploadSuccess(res){

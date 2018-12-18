@@ -9,7 +9,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -94,9 +97,10 @@ public class ProjectTemplateService {
 	public int addFile(ProjectTemplateFile file) {
 //		1 普通模板 2 实体模板 3 非模板 4 目录
 		File templateDir = new File(this.templateDir, file.getTemplateName());
+		Path targetPath = Paths.get(templateDir.getAbsolutePath(), file.getPath(), file.getName());
 		if (file.getType() == 4) {
 			try {
-				Files.createDirectories(Paths.get(templateDir.getAbsolutePath(), file.getPath(), file.getName()));
+				Files.createDirectories(targetPath);
 				ProjectTemplateConfig projectTemplateConfig = getTemplateByName(file.getTemplateName());
 				projectTemplateConfig.getTemplateFiles().add(file);
 				file.setTemplateName(null);
@@ -108,15 +112,27 @@ public class ProjectTemplateService {
 			}
 		}
 		try {
-			Files.write(Paths.get(templateDir.getAbsolutePath(), file.getPath()), file.getContent().getBytes("utf-8"));
+			if (file.getContentType().equals("url")) {
+				//下载
+				URL url = new URL(file.getContent().trim());
+				try (InputStream is = url.openStream()) {
+					Files.copy(is, targetPath);
+				}
+			} else if (file.getContentType().equals("upload")) {
+				//移动文件
+				Files.move(Paths.get(System.getProperty("java.io.tmpdir"), file.getContent()), targetPath);
+			} else {
+				//直接存
+				Files.write(targetPath, file.getContent().getBytes("utf-8"));
+			}
 			ProjectTemplateConfig projectTemplateConfig = getTemplateByName(file.getTemplateName());
 			projectTemplateConfig.getTemplateFiles().add(file);
 			file.setContent(null);
 			file.setTemplateName(null);
 			save(projectTemplateConfig);
 			return 1;
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception ex) {
+			ex.printStackTrace();
 			return 0;
 		}
 	}
